@@ -2,12 +2,12 @@ description: Develop Angular applications with a standard template or with a tem
 name: ulha-angular-stack
 display-name: ulha-angular-stack
 picture: stack.png
-category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
-compatibility: # Put a list of technologies compatible with the stack
-  - java
-  - spring
-technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies 
-  - docker 
+category: frontend
+compatibility:
+  - Angular
+technologies:
+  - Typescript
+  - Web
 about: docs/about.md
 use-cases:
   - title: Use Case Title
