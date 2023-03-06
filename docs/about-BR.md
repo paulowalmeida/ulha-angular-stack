@@ -19,5 +19,5 @@ A Stack está em constante evolução e no momento conta com as seguintes ferram
 - Angular Ngrx/store Plugin
 - Service API Plugin
 
-Espero poder ajudá-lo no seu desenvolvimento.
+Espero poder ajudá-lo no seu desenvolvimento.\
 Esteja à vontade para compartilhar dúvidas, sugestões e elogios.
