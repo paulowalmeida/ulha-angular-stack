@@ -10,6 +10,6 @@ technologies:
   - Web
 about: docs/about.md
 use-cases:
-  - title: Use Case Title
+  - title: Angular default template
     content: docs/use-case.md
     stackfile: stackfiles/default.yaml
