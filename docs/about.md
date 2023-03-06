@@ -1,1 +1,25 @@
-# About ulha-angular-stack stack
+# Ulha Angular Stack
+### You no longer need to build your Angular applications from scratch.
+<br>
+
+From this stack you can create angular applications in several versions without the need to install **@angular/cli**.
+
+In addition, there is the possibility of starting with a **standard angular template** or try **our template**, which merges **clean architecture concepts** and great **design standards** into your architecture.
+
+In addition to templates, you have several plugins that will help you with productivity, such as: Create a service that communicates with an api or deliver a state management module using ngrx/store.
+
+If you want to use a template with a plugin together, we also offer stackfiles that will help you create templates and plugins together.
+
+Stack is constantly evolving and currently has the following tools:
+<br><br>
+### Templates:
+- Default Architecture Template
+- Ulha Architecture Template
+
+### Plugins:
+- Angular Ngrx/store Plugin
+- Service API Plugins
+
+<br>
+I hope can help you in your development.<br>
+Feel free to share questions, suggestions and compliments. ;)

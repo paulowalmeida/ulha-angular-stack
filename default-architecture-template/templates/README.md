@@ -1,8 +1,8 @@
-# Angular Default Template
+# Default Architecture Template
 From this template, you can create angular projects in different versions.
 
 ## Tech
-Angular Default Template needs the following technologies to work properly:
+Default Architecture Template needs the following technologies to work properly:
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/download/)
@@ -12,13 +12,13 @@ Angular Default Template needs the following technologies to work properly:
 After the mentioned technologies are installed and configured, execute the following command:
 
 ```sh
-stk create app <app-name> -p <angular-default-template-directory>
+stk create app <app-name> -p <default-architecture-template-directory>
 ```
 
 or:
 
 ```sh
-stk create app <app-name> -p ulha-angular-stack/angular-default-template
+stk create app <app-name> -p ulha-angular-stack/default-architecture-template
 ```
 
 I hope you like the plugin and that it helps your productivity!

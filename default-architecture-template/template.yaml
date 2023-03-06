@@ -1,5 +1,5 @@
-name: angular-default-template
-description: Create a base project in angular
+name: default-architecture-template
+description: Creates an angular project in the default architecture
 types:
   - app-template
 inputs:
