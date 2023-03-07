@@ -12,4 +12,4 @@ about: docs/about.md
 use-cases:
   - title: Angular default template
     content: docs/use-case.md
-    stackfile: stackfiles/default.yaml
+    stackfile: stackfiles/default-architecture-template.yaml

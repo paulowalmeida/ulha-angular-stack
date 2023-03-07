@@ -1,23 +1,40 @@
 # Ulha Angular Stack
+### **Você não precisa criar suas aplicaçoes Angular a partir do zero.**
+<br />
 
-## Voce não precisa mais criar suas aplicações Angular do zero. 
+Com esta stack, você pode criar aplicações Angular em várias versões sem a necessidade de instalar **@angular/cli**.
 
-A partir dessa stack voce pode criar aplicações em angular em diversas versões sem a necessidade de instalação do @angular/cli.
+Além disso, existe a possibilidade de começar com um **modelo Angular padrão** ou experimentar **nosso modelo**, que mescla **conceitos de arquitetura limpa** e ótimos **padrões de projeto** em sua arquitetura.
 
-Além disso, existe a possibilidades de iniciar com um template padrão do angular ou experimentar o nosso template, que mescla conceitos de arquitetura limpa e ótimos padrões de projeto na sua arquitetura.
+Além dos modelos, você tem alguns plugins que ajudam a aumentar sua produtividade, como: Criar um **serviço que se comunique com uma API** ou  criar um **módulo de gerenciamento de estado usando o NGRX/Store**.
 
-Além dos templates, voce conta com diversos plugins que vão te auxiliar na produtividade como por exemplo: Criar serviço que comunique com uma api ou te entregar um módulo de gerenciamento de estado utilizando ngrx/store. 
+Se você deseja usar o template juntamente com um plug-in, também oferecemos stackfiles.
 
-Caso deseja utiizar em conjunto um template com um plugin, ofereçemos também stackfiles que te ajudarão na criação conjunta de templates e plugins.
+A stack está em constante evolução e atualmente possui as seguintes ferramentas:
+### Modelos:
+- Modelo de arquitetura padrão
+- modelo de arquitetura ULHA
 
-A Stack está em constante evolução e no momento conta com as seguintes ferramentas:
-### Templates:
-- Default Architecture Template
-- Ulha Architecture Template
+### plugins:
+- Angular NGRX/store plugin
+- Service API plugin <br /> <br />
 
-### Plugins:
-- Angular Ngrx/store Plugin
-- Service API Plugin
+### **Primeiros passos**
 
-Espero poder ajudá-lo no seu desenvolvimento.\
-Esteja à vontade para compartilhar dúvidas, sugestões e elogios.
+Para usar todas as ferramentas que contêm nesta stack, antes de tudo o que você precisa fazer é:
+
+### 1. Obtenha a pilha angular da ULHA
+
+```sh
+Stk Import Stack https://github.com/paulowalmeida/ulha-qualera-stack
+```
+### 2. Verifique se importado com sucesso.
+
+```sh
+Stk List Stack | Grep Ulha-Agle Stack
+```
+
+Para obter mais informações sobre como instalar e usar o Stackspot no Access [este link](https://docs.stackspot.com/docs/stk-cli/installation).
+<br />
+Espero essa stack possa ajudá-lo em seu desenvolvimento.<br />
+Sinta-se à vontade para compartilhar perguntas, sugestões e elogios. ;)
