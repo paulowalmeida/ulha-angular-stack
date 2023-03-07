@@ -18,7 +18,6 @@ stk import stack https://github.com/paulowalmeida/ulha-angular-stack
 ```sh
 stk list stack | grep ulha-angular-stack
 ```
-<br />
 
 ### **Create your application using default architecture template**
 ### 3. Enter in your directory of your choice and use this command:
@@ -100,6 +99,6 @@ Enjoy Dev!
 \
 For more info about how to install and use stackspot in access [this link](https://docs.stackspot.com/docs/stk-cli/installation)
 
-<br />
-I hope can help you in your development.<br />
+I hope can help you in your development.
+
 Feel free to share questions, suggestions and compliments. ;)

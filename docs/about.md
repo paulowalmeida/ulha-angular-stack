@@ -1,6 +1,5 @@
 # Ulha Angular Stack
 ### **You no longer need to build your Angular applications from scratch.** 
-<br />
 
 From this stack you can create angular applications in several versions without the need to install **@angular/cli**.
 
@@ -17,7 +16,7 @@ Stack is constantly evolving and currently has the following tools:
 
 ### Plugins:
 - Angular Ngrx/store Plugin
-- Service API Plugins <br /><br />
+- Service API Plugins
 
 ## **First steps**
 
@@ -36,6 +35,7 @@ stk list stack | grep ulha-angular-stack
 
 For more info about how to install and use stackspot in access [this link](https://docs.stackspot.com/docs/stk-cli/installation)
 
-<br />
-I hope can help you in your development.<br />
+
+I hope can help you in your development.
+
 Feel free to share questions, suggestions and compliments. ;)

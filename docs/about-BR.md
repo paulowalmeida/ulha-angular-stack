@@ -1,6 +1,5 @@
 # Ulha Angular Stack
 ### **Você não precisa criar suas aplicaçoes Angular a partir do zero.**
-<br />
 
 Com esta stack, você pode criar aplicações Angular em várias versões sem a necessidade de instalar **@angular/cli**.
 
@@ -17,7 +16,7 @@ A stack está em constante evolução e atualmente possui as seguintes ferrament
 
 ### plugins:
 - Angular NGRX/store plugin
-- Service API plugin <br /> <br />
+- Service API plugin
 
 ### **Primeiros passos**
 
@@ -35,6 +34,7 @@ Stk List Stack | Grep Ulha-Agle Stack
 ```
 
 Para obter mais informações sobre como instalar e usar o Stackspot no Access [este link](https://docs.stackspot.com/docs/stk-cli/installation).
-<br />
-Espero essa stack possa ajudá-lo em seu desenvolvimento.<br />
+
+Espero essa stack possa ajudá-lo em seu desenvolvimento
+
 Sinta-se à vontade para compartilhar perguntas, sugestões e elogios. ;)
