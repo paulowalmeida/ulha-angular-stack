@@ -1,25 +1,25 @@
-The purpose of this template is to deliver an Angular base project to the developer. However the biggest advantage of using this template is the ability to create a project in **several versions without the need to install @angular/cli**.
+O objetivo deste ***template*** é fornecer um projeto base Angular ao desenvolvedor. No entanto, a maior vantagem de usar este modelo é a capacidade de criar um projeto em **várias versões sem a necessidade de instalar @angular/cli**.
 
-The next step in the evolution of the stack will be to provide a new template based on the **Ulha Architecture**, that was thought from clean architecture concepts and some of the most used design patterns. This will also allow you to create projects in different versions.
+A próxima etapa da evolução da stack será fornecer o novo modelo com base na **arquitetura Ulha**, que utiliza conceitos de arquitetura limpa e alguns dos padrões de projeto mais usados. Isso também permitirá que você crie projetos em versões diferentes.
 
-For now, let's focus on creating a project from the default template.
-## Steps
-If you have not downloaded and configured ulha-angular-stack, **please perform steps 1 and 2** below, otherwise skip them.
+Por enquanto, vamos nos concentrar em criar um projeto a partir do modelo padrão.
+## Passos
+Se você não baixou e configurou a pilha angular, **execute as etapas 1 e 2** abaixo, caso contrário pule-as.
 
-### 1. Get Ulha Angular Stack
+### 1. Obtenha a pilha angular da ULHA
 ```sh
-stk import stack https://github.com/paulowalmeida/ulha-angular-stack 
+stk import stack https://github.com/paulowalmeida/ulha-angular-stack
 ```
-### 2. Check if successfully imported.
+### 2. Verifique se importado com sucesso.
 ```sh
 stk list stack | grep ulha-angular-stack
 ```
-## Create your application using default architecture template
-### 3. Enter in your directory of your choice and use this command:
+## Crie seu aplicativo usando o modelo de arquitetura padrão
+### 3. Digite seu diretório de sua escolha e use este comando:
 ```sh
 stk create app <app_name> -t ulha-angular-stack/default-architecture-template
 ```
-### 4. From that point on, you can choose the version of your angular project.
+### 4. A partir desse ponto, você pode escolher a versão do seu projeto angular.
 ```sh
 ? Angular version (Use shortcuts or arrow keys)
  » 1) ~15.0.0
@@ -43,7 +43,7 @@ stk create app <app_name> -t ulha-angular-stack/default-architecture-template
    i) ~9.0.7
   Answer: 1) ~15.0.0
 ```
-### 5. After it, you see something like this on screen and your project is create with success
+### 5. Depois disso, você vê algo assim na tela e seu projeto está criado com sucesso.
 ```sh
 Creating the base project. wait...
 CREATE <app_name>/README.md (1061 bytes)
@@ -88,8 +88,8 @@ Enjoy Dev!
 - <app_name> application successfully created!
 ```
 
-For more info about how to install and use stackspot in access [this link](https://docs.stackspot.com/docs/stk-cli/installation)
+Para obter mais informações sobre como instalar e usar o Stackspot, acesse [este link](https://docs.stackspot.com/docs/stk-cli/installation).
 
-Feel free to ask for help, or suggest improvements from [github repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
+Sinta-se à vontade para pedir ajuda ou sugerir melhorias a partir do [repositório github](https://github.com/paulowalmeida/ulha-angular-stack/issues).
 
-I hope this stack can help you in your development.
+Espero que esta stack ajude-o no desenvolvimento do seu projeto ;)
