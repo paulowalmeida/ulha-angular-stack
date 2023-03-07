@@ -7,9 +7,10 @@ compatibility:
   - Angular
 technologies:
   - Typescript
+  - Ngrx/store
   - Web
 about: docs/about.md
 use-cases:
-  - title: Angular default template
+  - title: Default Architecture Template
     content: docs/use-case.md
     stackfile: stackfiles/default-architecture-template.yaml

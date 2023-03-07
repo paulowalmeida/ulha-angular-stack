@@ -1,5 +1,3 @@
-# Use case
-## Default Architecture Template
 The purpose of this template is to deliver an Angular base project to the developer. However the biggest advantage of using this template is the ability to create a project in **several versions without the need to install @angular/cli**.
 
 The next step in the evolution of the stack will be to provide a new template based on the **Ulha Architecture**, that was thought from clean architecture concepts and some of the most used design patterns. This will also allow you to create projects in different versions.
