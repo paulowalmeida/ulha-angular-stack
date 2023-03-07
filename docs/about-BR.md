@@ -18,14 +18,14 @@ A stack está em constante evolução e atualmente possui as seguintes ferrament
 - Angular NGRX/store plugin
 - Service API plugin
 
-### **Primeiros passos**
+### Primeiros passos
 Para usar todas as ferramentas que contêm nesta stack, antes de tudo o que você precisa fazer é:
 
-## 1.Obtenha a pilha angular da ULHA
+## 1. Obtenha a pilha angular da ULHA
 ```sh
 Stk Import Stack https://github.com/paulowalmeida/ulha-qualera-stack
 ```
-### 2.Verifique se importado com sucesso.
+### 2. Verifique se importado com sucesso.
 ```sh
 Stk List Stack | Grep Ulha-Agle Stack
 ```

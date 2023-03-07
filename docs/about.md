@@ -18,14 +18,14 @@ Stack is constantly evolving and currently has the following tools:
 - Angular Ngrx/store Plugin
 - Service API Plugins
 
-## **First steps**
+## First steps
 To use all tools that contains in this stack, first of all you need before to do some steps:
 
-### 1.Get Ulha Angular Stack
+### 1. Get Ulha Angular Stack
 ```sh
 stk import stack https://github.com/paulowalmeida/ulha-angular-stack 
 ```
-### 2.Check if successfully imported.
+### 2. Check if successfully imported.
 ```sh
 stk list stack | grep ulha-angular-stack
 ```
