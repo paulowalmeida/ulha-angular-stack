@@ -3,27 +3,23 @@ The purpose of this template is to deliver an Angular base project to the develo
 The next step in the evolution of the stack will be to provide a new template based on the **Ulha Architecture**, that was thought from clean architecture concepts and some of the most used design patterns. This will also allow you to create projects in different versions.
 
 For now, let's focus on creating a project from the default template.
-### **Steps**
+## **Steps**
 If you have not downloaded and configured ulha-angular-stack, **please perform steps 1 and 2** below, otherwise skip them.
 
-### 1. Get Ulha Angular Stack
-
+### 1.Get Ulha Angular Stack
 ```sh
 stk import stack https://github.com/paulowalmeida/ulha-angular-stack 
 ```
-### 2. Check if successfully imported.
-
+### 2.Check if successfully imported.
 ```sh
 stk list stack | grep ulha-angular-stack
 ```
-
-### **Create your application using default architecture template**
-### 3. Enter in your directory of your choice and use this command:
+## **Create your application using default architecture template**
+### 3.Enter in your directory of your choice and use this command:
 ```sh
 stk create app <app_name> -t ulha-angular-stack/default-architecture-template
 ```
-
-### 4. From that point on, you can choose the version of your angular project.
+### 4.From that point on, you can choose the version of your angular project.
 ```sh
 ? Angular version (Use shortcuts or arrow keys)
  » 1) ~15.0.0
@@ -47,9 +43,7 @@ stk create app <app_name> -t ulha-angular-stack/default-architecture-template
    i) ~9.0.7
   Answer: 1) ~15.0.0
 ```
-
-### 3. After it, you see something like this on screen and your project is create with success
-
+### 5.After it, you see something like this on screen and your project is create with success
 ```sh
 Creating the base project. wait...
 CREATE <app_name>/README.md (1061 bytes)
