@@ -35,3 +35,12 @@ For more info about how to install and use stackspot in access [this link](https
 Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
 
 I hope can help you in your development. ;)
+
+
+### Note
+You must be wondering: What is 'Ulha'?
+
+Ulha is a term often used in northern Brazil, particularly in the metropolitan region of Belém, in the state of Pará.
+
+Ulha is a term that means a very good surprise ;)
+There's nothing better than using my regional representation, baptizing the stack with something from my homeland.
