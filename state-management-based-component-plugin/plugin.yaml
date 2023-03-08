@@ -1,6 +1,6 @@
-name: angular-ngrx-store-plugin
+name: state-management-based-component-plugin
 description: Creates an Angular component with defined architecture and fully configured state management
-display-name: angular-ngrx-store-plugin
+display-name: state-management-based-component-plugin
 picture: plugin.png
 category: frontend
 compatibility:
