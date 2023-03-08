@@ -6,11 +6,10 @@ This plugin supports being installed in both angular projects created from the s
 
 Next you see more details about the plugin.
 
-1. [Technologies](#plugin-core-technologies)
+1. [Plugin core technologies](#plugin-core-technologies)
 2. [Motivation](#motivation)
 3. [Architecture](#architecture)
 4. [Happy Path of information](#happy-path-of-information)
-5. [Applying Plugin](#applying-plugin)
 
 ## **Plugin core technologies**
 
@@ -59,35 +58,3 @@ Basically following the flow of the happy path, we have:
 7. The Selector responsible for listening to successful changes in the list attribute of the state starts issuing the new value.
 8. In The facade service, getList method understands that there is a new value being emitted by the selector and returns the observable to the component.
 9. The component can then display the information to the user.
-
-## **Applying Plugin**
-
-To apply the Plugin in your projects, you need have the StackSpot CLI installed on your machine. [If not, follow this tutorial to install](https://docs.stackspot.com/docs/stk-cli/installation/).
-
-### 1. Import the Stack on your machine
-
-```sh
-stk import stack https://github.com/zup-academy/ulha-angular-stack
-```
-
-### 2. Now check if the Stack was successfully imported
-
-```sh
-stk list stack | grep ulha-angular-stack
-```
-
-### 3. Apply the Plugin, in your project directory, execute
-
-```sh
-stk apply plugin ulha-angular-stack/state-management-based-component-plugin
-```
-
-### 4. Check the changes in your project
-
-```sh
-git status
-```
-
-Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
-
-I hope can help you in your development. ;)
