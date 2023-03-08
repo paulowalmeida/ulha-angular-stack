@@ -6,10 +6,10 @@ This plugin supports being installed in both angular projects created from the s
 
 Next you see more details about the plugin.
 
-1. [Plugin core technologies](#plugin-core-technologies)
-2. [Motivation](#motivation)
-3. [Architecture](#architecture)
-4. [Happy Path of information](#happy-path-of-information)
+- [Plugin core technologies](#plugin-core-technologies)
+- [Motivation](#motivation)
+- [Architecture](#architecture)
+- [Happy Path of information](#happy-path-of-information)
 
 ## **Plugin core technologies**
 

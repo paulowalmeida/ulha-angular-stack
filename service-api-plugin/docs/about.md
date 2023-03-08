@@ -4,9 +4,9 @@ This plugin is a little help to help you create a service that communicates with
 
 Next you see more details about the plugin.
 
-1. [Motivation](#motivation)
-2. [Methods](#methods)
-3. [URL](#url)
+- [Motivation](#motivation)
+- [Methods](#methods)
+- [URL](#url)
 
 ### **Motivation**
 
