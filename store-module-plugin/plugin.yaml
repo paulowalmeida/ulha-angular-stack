@@ -1,0 +1,36 @@
+name: store-module-plugin
+description: Provide a state management layer using ngrx/store and abstract usage with a facade service.
+display-name: store-module-plugin
+picture: plugin.png
+category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+compatibility:
+  - java
+  - spring
+about: docs/about.md
+usage: docs/usage.md
+use-case: docs/use-case.md
+implementation: docs/implementation.md
+technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
+  - "Api"
+types:
+  - app
+inputs:
+  - label: What is the entity name (use lowercase and if it is compound name use spaces between word)
+    type: text
+    name: entity_name
+    default: pet
+  - label: What is the path where the component will be create?
+    type: text
+    name: component_path
+    default: src/app/
+  - label: Do you want install and configure ngrx/store?
+    type: bool
+    name: install_deps
+    default: false
+computedInputs:
+  "resource_pascalcase": "{{ resource_name | pascalcase }}"
+  "resource_camelcase": "{{ resource_name | camelcase }}"
+  "resource_name": "{{ resource_name | replace(' ', '-')}}"
+  "service_filename": "{{ resource_name | replace(' ', '-')}}"
+  "service_classname": "{{ resource_pascalcase + 'Service'}}"
+  "component_path": "{{ inputs.component_path + computed_inputs.service_filename }}"

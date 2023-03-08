@@ -12,6 +12,7 @@ implementation: docs/implementation.md
 technologies:
   - "Angular"
   - "Web"
+  - "Typescript"
 types:
   - app
 inputs:
