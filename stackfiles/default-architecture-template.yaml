@@ -1,3 +1,0 @@
-type: app
-description: Stackfile for an angular project based on the framework's base template.
-template: ulha-angular-stack/default-architecture-template
