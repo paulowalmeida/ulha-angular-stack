@@ -8,6 +8,7 @@ compatibility:
 about: docs/about.md
 usage: docs/usage.md
 use-case: docs/use-case.md
+implementation: docs/implementation.md
 technologies:
   - "Angular"
   - "Web"
