@@ -1,91 +1,85 @@
 # **State Management Based Component Plugin**
 
-The State Management Based Component Plugin iis an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
+The State Management Based Component Plugin is an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
 
 This plugin supports being installed in both angular projects created from the stack and by the conventional method.
 
 Next you see more details about the plugin.
 
 1. [Technologies](#plugin-core-technologies)
-2. [Concepts, Design Patterns and Architecture](#what-are-the-capabilities-enabled)
-3. [Benefits of using the Plugin](#what-are-the-benefits-of-using-java-spring-aws-sns-plugin)
-4. [Applying Plugin](#applying-java-spring-aws-sns-plugin)
+2. [Motivation](#motivation)
+3. [Architecture](#architecture)
+4. [Happy Path of information](#happy-path-of-information)
+5. [Applying Plugin](#applying-plugin)
 
 ## **Plugin core technologies**
 
-The purpose of this session is to inform which technologies are part of the Java Spring AWS SNS Plugin.
+In this session you will know which technologies are part of the State Management Based Component Plugin.
 
-By applying this plugin in a Java Spring Boot project, your application can benefit from the entire Amazon SNS infrastructure to handle notifications in your application.
+The technologies, concepts and design patterns applied in this project are:
 
-### **Technological Composition**
+- Ngrx/store
+    - Actions
+    - Reducer
+    - Effects
+    - Selectors
+- Design Patters
+    - Facade
+    - Adapter
+- Some SOLID concepts
+    - Single responsability
+    - Dependency Inversion
 
-The definition of this Plugin was designed to facilitate the use of Amazon SNS as a Publisher and Subscribe for messaging Java applications.
+### **Motivation**
 
+The motivation to create this plug-in can be divided into two factors: 
+- Abstraction of the implementation complexity, as it is known that there is a certain barrier in terms of the learning curve and use by some developers (mainly Junior seniority). .
+
+- Gain time to create a state management structure within an Angular application, because due to the complexity, a task to develop a structure like this, depending on the degree of knowledge of the developer, can take more than a day of hard work.
 We understand that quality is non-negotiable, and we look to technologies and methodologies as a means to obtain the much-desired software quality. This premise was the guide for choosing each technology detailed below.
 
+## **Architecture**
+In the following image you can see the architecture of the plugin:
+![Architecture](../architecture.png)
 
-- Production environment
-    - Spring Cloud AWS Messaging
-    - Amazon SDK SQS
-- Test environment
-    - Spring Clud AWS Test
-    - Awaitility
-    - JUnit
-    - Test Containers
-        - LocalStack
-- Development environment
-    - Docker Compose
-        - LocalStack Container
+In the following image you can see the architecture of the plugin:
 
+The architecture designed for this component aims to ensure that the complexity in using state management is abstracted to the view layers, using a facade service as an orchestrator for all interaction with the store.
 
-## **What are the capabilities Enabled**
+Other interesting details are that the service layer has an adapter that makes it possible to pre-process the information before any request and after any response. Of course, this point may become optional depending on the context.
 
-By applying the Java Spring AWS SNS Plugin to your Java Spring Boot project, your project will be able to:
+## **Happy Path of information**
+Basically following the flow of the happy path, we have:
+1. The application from the view requests a list of items to be displayed;
+2. The component calls a Get List method of the facade service.
+3. The Facade service understands that it has to dispatch an action with the intention of storing data in the store.
+4. Effect intercepts this action and triggers the service that communicates with the API.
+5. The Api returns the information to the service, which in turn triggers a new success action in the effect, otherwise it triggers a failure action.
+6. The successful Action is captured by the reducer, which recovers its payload and stores it in the state.
+7. The Selector responsible for listening to successful changes in the list attribute of the state starts issuing the new value.
+8. In The facade service, getList method understands that there is a new value being emitted by the selector and returns the observable to the component.
+9. The component can then display the information to the user.
 
-1. Create SNS Publishers
-2. Configure SNS subscribes
-3. Create Topics in SNS
-4. Design and build software components that use Amazon SNS without connecting to AWS.
-5. Create an automated integration test suite with TestContainers and LocalStack
-7. Create Tests of an asynchronous nature for Subscribers with Awaitility
-8. Development environment set up next to Docker with Docker-compose.
-9. LocalStack for testing and local development
+## **Applying Plugin**
 
-## **What are the benefits of using Java Spring AWS SNS Plugin**
-
-1. Ease of configuring and using Amazon SNS in your project through the StackSpot CLI.
-2. Publisher for Amazon SNS example codes using best practices.
-3. Sample codes on how to Subscribe to Amazon SNS using best practices.
-4. Integration Tests sample codes to validate Publisher SNS behavior.
-5. Integration Test example codes to validate behavior of Subscribers notified by Amazon SNS.
-7. Configuration of the test environment with JUnit and Test Containers.
-8. DockerCompose for using Amazon SNS with LocalStack in a development environment.
-9. Logs enabled to facilitate troubleshooting
-
-
-[Watch this video to see the benefits of using Java Spring AWS SNS Plugin in your project](https://youtu.be/I6HLbGGGioQ)
-
-
-## **Applying Java Spring AWS SNS Plugin**
-
-To apply the Java Spring AWS SNS Plugin in your projects and enjoy its benefits, you must have the StackSpot CLI installed on your machine. [If not, follow this tutorial to install](https://docs.stackspot.com/docs/stk-cli/installation/).
+To apply the Plugin in your projects, you need have the StackSpot CLI installed on your machine. [If not, follow this tutorial to install](https://docs.stackspot.com/docs/stk-cli/installation/).
 
 ### 1. Import the Stack on your machine
 
 ```sh
-stk import stack https://github.com/zup-academy/java-springboot-restapi-stack
+stk import stack https://github.com/zup-academy/ulha-angular-stack
 ```
 
 ### 2. Now check if the Stack was successfully imported
 
 ```sh
-stk list stack | grep java-springboot
+stk list stack | grep ulha-angular-stack
 ```
 
 ### 3. Apply the Plugin, in your project directory, execute
 
 ```sh
-stk apply plugin java-springboot-restapi-stack/java-spring-aws-sns-plugin
+stk apply plugin ulha-angular-stack/state-management-based-component-plugin
 ```
 
 ### 4. Check the changes in your project
@@ -94,8 +88,6 @@ stk apply plugin java-springboot-restapi-stack/java-spring-aws-sns-plugin
 git status
 ```
 
+Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
 
-
-## Support
-
-If you need help, please open an [issue in Stack's Github repository](https://github.com/zup-academy/java-spring-aws-sns-plugin/issues).
+I hope can help you in your development. ;)
