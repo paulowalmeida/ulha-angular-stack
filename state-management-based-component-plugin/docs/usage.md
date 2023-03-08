@@ -5,7 +5,7 @@ To apply the Plugin in your projects, you need have the StackSpot CLI installed 
 ### 1. Import the Stack on your machine
 
 ```sh
-stk import stack https://github.com/zup-academy/ulha-angular-stack
+stk import stack https://github.com/paulowalmeida/ulha-angular-stack
 ```
 
 ### 2. Now check if the Stack was successfully imported
