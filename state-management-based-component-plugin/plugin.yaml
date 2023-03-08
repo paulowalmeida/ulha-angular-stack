@@ -1,6 +1,6 @@
 name: state-management-based-component-plugin
 description: Creates an Angular component with defined architecture and fully configured state management
-display-name: state-management-based-component-plugin
+display-name: State Management Based Component Plugin
 picture: plugin.png
 category: frontend
 compatibility:

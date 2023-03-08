@@ -1,6 +1,6 @@
 name: service-api-plugin
 description: This plugin allows you to quickly create a base structure of a service that communicates with an API.
-display-name: service-api-plugin
+display-name: Service API Plugin
 picture: plugin.png
 category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
 compatibility:
