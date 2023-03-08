@@ -1,3 +1,1 @@
-# Implementation
-
 To implement the plugin, you need to declare it a .module that controls all your component generated in a .module (for example: app.module.ts) so that it can manage and provide the resources of ngrx/store to the component.

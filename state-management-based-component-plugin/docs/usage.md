@@ -1,5 +1,3 @@
-# Usage
-
 To apply the Plugin in your projects, you need have the StackSpot CLI installed on your machine. [If not, follow this tutorial to install](https://docs.stackspot.com/docs/stk-cli/installation/).
 
 ### 1. Import the Stack on your machine
