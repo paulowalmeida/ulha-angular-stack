@@ -47,7 +47,7 @@ hooks:
 
   - type: run-script
     trigger: after-render
-    script: scripts/handle-files-after-build.py
+    script: ../scripts/handle-files-after-build.py
 
   - type: run
     trigger: after-render
