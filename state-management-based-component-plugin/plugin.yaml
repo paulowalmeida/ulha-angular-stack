@@ -1,6 +1,6 @@
-name: angular-ngrx-store-plugin
+name: state-management-based-component-plugin
 description: Creates an Angular component with defined architecture and fully configured state management
-display-name: angular-ngrx-store-plugin
+display-name: State Management Based Component Plugin
 picture: plugin.png
 category: frontend
 compatibility:
@@ -114,13 +114,15 @@ hooks:
               import { HttpClientModule } from '@angular/common/http';
               import { EffectsModule } from '@ngrx/effects';
               import { StoreModule } from '@ngrx/store';
+              import { StoreDevtoolsModule } from '@ngrx/store-devtools';
         annotation:
           - NgModule:
               - attribute: imports
                 insert: |
                   HttpClientModule,
                   StoreModule.forRoot({}),
-                  EffectsModule.forRoot({})
+                  EffectsModule.forRoot({}),
+                  StoreDevtoolsModule.instrument()
   - type: run
     trigger: after-render
     commands:

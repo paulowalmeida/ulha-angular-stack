@@ -15,7 +15,7 @@ stk list stack | grep ulha-angular-stack
 ### 3. Apply the Plugin, in your project directory, execute
 
 ```sh
-stk apply plugin ulha-angular-stack/service-api-plugin
+stk apply plugin ulha-angular-stack/state-management-based-component-plugin
 ```
 
 ### 4. Check the changes in your project

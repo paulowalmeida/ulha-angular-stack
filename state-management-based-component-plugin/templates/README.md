@@ -1,4 +1,4 @@
-# Angular Ngrx/Store Plugin
+# State Management Based Component Plugin
 From this plugin, you can get a state management layer with Ngrx/Store in your Angular project.
 
 ## Features
@@ -8,7 +8,7 @@ From this plugin, you can get a state management layer with Ngrx/Store in your A
 - A small json that can simulate an api with the help of the json-server nodejs module.
 
 ## Tech
-Angular Ngrx/Store Plugin needs the following technologies to work properly:
+State Management Based Component Plugin needs the following technologies to work properly:
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/download/)
@@ -19,7 +19,7 @@ Angular Ngrx/Store Plugin needs the following technologies to work properly:
 After the mentioned technologies are installed and configured, you just need to go to the root directory of the angular project that you want to use the plugin and execute the following command:
 
 ```sh
-stk apply plugin -p <angular-ngxr-store-component-directory>
+stk apply plugin -p ulha-angular-stack/state-management-based-component-plugin
 ```
 
 I hope you like the plugin and that it helps your productivity.
