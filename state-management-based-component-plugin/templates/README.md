@@ -19,7 +19,7 @@ State Management Based Component Plugin needs the following technologies to work
 After the mentioned technologies are installed and configured, you just need to go to the root directory of the angular project that you want to use the plugin and execute the following command:
 
 ```sh
-stk apply plugin -p ulha-angular-stack/angular-ngrx-store-plugin
+stk apply plugin -p ulha-angular-stack/state-management-based-component-plugin
 ```
 
 I hope you like the plugin and that it helps your productivity.
