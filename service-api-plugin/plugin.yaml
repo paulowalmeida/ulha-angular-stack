@@ -4,26 +4,19 @@ display-name: Service API Plugin
 picture: plugin.png
 category: frontend
 compatibility:
-<<<<<<< HEAD
  technologies:
   - "Angular"
   - "Web"
-=======
-  - angular
->>>>>>> 4016a2a4530af7e068d2807809c3a859973f2edc
 about: docs/about.md
 usage: docs/usage.md
 use-case: docs/use-case.md
 implementation: docs/implementation.md
 technologies:
   - "Angular"
-<<<<<<< HEAD
   - "Api"
   - "Rest"
   - "Typescript"
-=======
   - "Web"
->>>>>>> 4016a2a4530af7e068d2807809c3a859973f2edc
 types:
   - app
 inputs:
