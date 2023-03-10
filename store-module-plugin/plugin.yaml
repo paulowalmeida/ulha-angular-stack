@@ -1,17 +1,18 @@
 name: store-module-plugin
 description: Provide a state management layer using ngrx/store and abstract usage with a facade service.
-display-name: store-module-plugin
+display-name: Store Module Plugin
 picture: plugin.png
-category: backend # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/plugin/#category
+category: frontend
 compatibility:
-  - java
-  - spring
+  - angular
 about: docs/about.md
 usage: docs/usage.md
 use-case: docs/use-case.md
 implementation: docs/implementation.md
-technologies: # Ref: https://docs.stackspot.com/docs/create-stacks/yaml-files/yaml/#technologies
-  - "Api"
+technologies:
+  - "Angular"
+  - "Web"
+  - "Typescript"
 types:
   - app
 inputs:
@@ -19,18 +20,84 @@ inputs:
     type: text
     name: entity_name
     default: pet
+  
   - label: What is the path where the component will be create?
     type: text
     name: component_path
     default: src/app/
-  - label: Do you want install and configure ngrx/store?
+  
+  - label: Do you want download ngrx/store dependencies?
     type: bool
-    name: install_deps
-    default: false
+    name: download_deps
+    default: true
+  
+  - label: Do you want configure ngrx/store modules.forRoot in app.module.ts?
+    type: bool
+    name: config_imports
+    default: true
+
 computedInputs:
-  "resource_pascalcase": "{{ resource_name | pascalcase }}"
-  "resource_camelcase": "{{ resource_name | camelcase }}"
-  "resource_name": "{{ resource_name | replace(' ', '-')}}"
-  "service_filename": "{{ resource_name | replace(' ', '-')}}"
-  "service_classname": "{{ resource_pascalcase + 'Service'}}"
-  "component_path": "{{ inputs.component_path + computed_inputs.service_filename }}"
+  "entity_plural": "{{ entity_name + 's' }}"
+  "entity_pascal": "{{ entity_name | pascalcase }}"
+  "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
+  "entity_camel": "{{ entity_name | camelcase }}"
+  "entity_camel_plural": "{{ entity_plural | camelcase }}"
+  "entity_filename": "{{ entity_name | replace(' ', '-') }}"
+  "entity_failure": "{{ entity_name + ' Failure' }}"
+  "entity_failure_model": "{{ entity_pascal + 'FailureModel' }}"
+  "component_path": "{{ inputs.component_path + inputs.entity_name + 's' }}"
+
+  "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
+  "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
+
+  "entity_effects": "{{ entity_pascal + 'Effects' }}"
+
+  "entity_reducer": "{{ entity_camel + 'Reducer' }}"
+  "entity_feature_selector": "{{ entity_camel_plural + 'FeatureSelector' }}"
+
+hooks:
+  - type: run-script
+    trigger: before-render
+    script: ../scripts/build-http-variables.py
+  
+  - type: run-script
+    trigger: before-render
+    script: ../scripts/build-store-variables.py
+  
+  - type: run
+    trigger: after-render
+    linux:
+      - npm install @ngrx/effects @ngrx/store @ngrx/store-devtools
+      - npm install
+    windows:
+      - npm.cmd install @ngrx/effects @ngrx/store @ngrx/store-devtools
+      - npm.cmd install
+    mac:
+      - npm install @ngrx/effects @ngrx/store @ngrx/store-devtools
+      - npm install
+    condition:
+      variable: download_deps
+      operator: "=="
+      value: true
+  
+  - type: code-transformation
+    trigger: after-render
+    path: src/app/app.module.ts
+    code-transformation:
+      typescript:
+        import:
+          - insert: |
+              import { EffectsModule } from '@ngrx/effects';
+              import { StoreModule } from '@ngrx/store';
+              import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+        annotation:
+          - NgModule:
+              - attribute: imports
+                insert: |
+                  StoreModule.forRoot({ {{ entity_feature_selector }}: {{ entity_reducer }} }),
+                  EffectsModule.forRoot({}),
+                  StoreDevtoolsModule.instrument()
+    condition:
+    variable: config_imports
+    operator: "=="
+    value: true

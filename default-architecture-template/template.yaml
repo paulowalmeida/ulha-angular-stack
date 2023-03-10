@@ -6,6 +6,7 @@ inputs:
   - label: Project name
     type: text
     name: project_name
+  
   - label: Angular version
     type: text
     items:
@@ -30,6 +31,20 @@ inputs:
     - ~9.0.7
     name: angular_version
 
+  - label: Style
+    type: text
+    items:
+    - scss
+    - css
+    - saas
+    - less
+    name: style_type
+
+  - label: Do you want create app.routing.module.ts ?
+    type: bool
+    name: has_routing
+    default: true
+
 hooks:
   - type: run
     trigger: after-render
@@ -39,11 +54,11 @@ hooks:
   - type: run
     trigger: after-render
     linux:
-      - npx @angular/cli@{{angular_version}} new {{project_name}} --style=scss --skip-install
+      - npx @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
     windows:
-      - npx.cmd @angular/cli@{{angular_version}} new {{project_name}} --style=scss --skip-install
+      - npx.cmd @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
     mac:
-      - npx @angular/cli@{{angular_version}} new {{project_name}} --style=scss --skip-install
+      - npx @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
 
   - type: run-script
     trigger: after-render

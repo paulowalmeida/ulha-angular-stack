@@ -28,9 +28,9 @@ inputs:
     type: int
     name: api_port
     default: 3000
-  - label: What is the host resource name? (please input name in single)
+  - label: What is the entity name (resource)? Please input name in single
     type: text
-    name: resource_name
+    name: entity_name
     default: "pet"
   - label: What is the path where the component will be create?
     type: text
@@ -41,19 +41,16 @@ inputs:
     name: config_module
     default: false
 computedInputs:
-  "resource_pascalcase": "{{ resource_name | pascalcase }}"
-  "resource_camelcase": "{{ resource_name | camelcase }}"
-  "resource_name": "{{ resource_name | replace(' ', '-')}}"
-  "service_filename": "{{ resource_name | replace(' ', '-')}}"
-  "service_classname": "{{ resource_pascalcase + 'Service'}}"
+  "entity_pascalcase": "{{ entity_name | pascalcase }}"
+  "entity_camelcase": "{{ entity_name | camelcase }}"
+  "entity_name": "{{ entity_name | replace(' ', '-')}}"
+  "service_filename": "{{ entity_name | replace(' ', '-')}}"
+  "service_classname": "{{ entity_pascalcase + 'Service'}}"
   "component_path": "{{ inputs.component_path + computed_inputs.service_filename }}"
-
-  "get_list": "{{ 'get' + (resource_pascalcase + 's') | pascalcase}}"
-  "get_item": "{{ 'get' + (resource_pascalcase | pascalcase) + 'ById' }}"
-  "save_item": "{{ 'save' + (resource_pascalcase | pascalcase) }}"
-  "edit_item": "{{ 'edit' + (resource_pascalcase | pascalcase) }}"
-  "remove_item": "{{ 'remove' + (resource_pascalcase | pascalcase) }}"
 hooks:
+  - type: run-script
+    trigger: before-render
+    script: ../scripts/build-http-variables.py
   - type: code-transformation
     trigger: after-render
     working-dir: "{{target_path}}"

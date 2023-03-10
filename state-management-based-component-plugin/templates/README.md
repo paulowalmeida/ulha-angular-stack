@@ -1,5 +1,5 @@
 # State Management Based Component Plugin
-From this plugin, you can get a state management layer with Ngrx/Store in your Angular project.
+From this plugin, you can get a state management based Component with Ngrx/Store in your Angular project.
 
 ## Features
 - A service facade to abstract the use of actions and selectors by your component;

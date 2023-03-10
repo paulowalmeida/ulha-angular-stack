@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-const BASE_URL = "http://{{ api_host }}:{{ api_port }}/{{ resource_name + 's' }}";
+const BASE_URL = "http://{{ api_host }}:{{ api_port }}/{{ entity_name + 's' }}";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class {{ service_classname }} {
     try {
       return this.http.get<any>(BASE_URL);
     } catch(error) {
-      return of(new Error('Error loading {{ resource_name }} list.'));
+      return of(new Error('Error loading {{ entity_name }} list.'));
     }
   }
 
@@ -23,23 +23,23 @@ export class {{ service_classname }} {
     try {
       return this.http.get<any>(BASE_URL + '/' + id);
     } catch(error) {
-      return of(new Error('Error loading selected {{ resource_name }}.'));
+      return of(new Error('Error loading selected {{ entity_name }}.'));
     }
   }
 
-  {{ save_item }}({{ resource_camelcase }}: any): Observable<any> {
+  {{ save_item }}({{ entity_camelcase }}: any): Observable<any> {
     try {
-      return this.http.post<any>(BASE_URL, {{ resource_camelcase }});
+      return this.http.post<any>(BASE_URL, {{ entity_camelcase }});
     } catch (error) {
-      return of(new Error('Error creating selected {{ resource_name }}.'));
+      return of(new Error('Error creating selected {{ entity_name }}.'));
     }
   }
 
-  {{ edit_item }}({{ resource_camelcase }}: any): Observable<any> {
+  {{ edit_item }}({{ entity_camelcase }}: any): Observable<any> {
     try {
-      return this.http.patch<any>(BASE_URL + '/' + {{resource_camelcase + '.id'}}, {{ resource_camelcase }});
+      return this.http.patch<any>(BASE_URL + '/' + {{entity_camelcase + '.id'}}, {{ entity_camelcase }});
     } catch (error) {
-      return of(new Error('Error updating selected {{ resource_name }}.'));
+      return of(new Error('Error updating selected {{ entity_name }}.'));
     }
   }
 
@@ -47,7 +47,7 @@ export class {{ service_classname }} {
     try {
       return this.http.delete<any>(BASE_URL + '/' + id);
     } catch (error) {
-      return of(new Error('Error deleting selected {{ resource_name }}.'));
+      return of(new Error('Error deleting selected {{ entity_name }}.'));
     }
   }
 }
