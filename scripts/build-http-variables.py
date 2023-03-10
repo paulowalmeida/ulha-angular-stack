@@ -6,22 +6,26 @@ methodsName = ['get', 'get', 'save', 'edit', 'remove']
 
 def run(metadata: Metadata = None):
     computedInputs = metadata.computed_inputs
-    entityName = metadata.computed_inputs['entity_pascal']
-
+    entityName = str(metadata.computed_inputs['entity_pascal'])
     buildHttpMethodNames(computedInputs, entityName)
     return metadata
 
 def buildHttpMethodNames(computedInputs, entityName):
-    for index in range(len(methodsName)):
-        methodName = methodsName[index]
-        methodVar = ''
-        methodValue = ''
-
-        if index == 0:
-            methodVar = str(methodName + '_list')
-            methodValue = methodName + str(entityName) + 's'
-        else:
-            methodVar = str(methodName + '_item')
-            methodValue = methodName + str(entityName) + ('Byid' if index == 1 else '')
-
+    for i in range(len(methodsName)):
+        methodName = methodsName[i]
+        methodVar = buildMethodVar(methodName,i)
+        methodValue = buildMethodValue(methodName, entityName, i)
         computedInputs[methodVar] = methodValue
+
+def buildMethodVar(methodName, i):
+    return methodName + ('_list' if i == 0 else '_item')
+
+def buildMethodValue(methodName, entityName, i):
+    suffix = ''
+
+    if i == 0:
+        suffix = 's'
+    if i == 1:
+        suffix = 'ById'
+     
+    return methodName + entityName + suffix

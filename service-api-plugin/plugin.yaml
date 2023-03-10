@@ -47,10 +47,9 @@ inputs:
 computedInputs:
   "entity_pascal": "{{ entity_name | pascalcase }}"
   "entity_camel": "{{ entity_name | camelcase }}"
-  "entity_name": "{{ entity_name | replace(' ', '-')}}"
-  "service_filename": "{{ entity_name | replace(' ', '-')}}"
+  "filename": "{{ entity_name | replace(' ', '-')}}"
+  "component_path": "{{ inputs.component_path + computed_inputs.filename }}"
   "service_classname": "{{ entity_pascal + 'Service'}}"
-  "component_path": "{{ inputs.component_path + computed_inputs.service_filename }}"
 hooks:
   - type: run-script
     trigger: before-render

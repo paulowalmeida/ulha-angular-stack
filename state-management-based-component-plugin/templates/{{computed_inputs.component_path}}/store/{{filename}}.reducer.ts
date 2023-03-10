@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { AbstractFetchStateModel } from "../models/abstract-fetch-state.model";
-import * as actions from "./{{ entity_filename }}.actions";
+import * as actions from "./{{ filename }}.actions";
 
 export interface State extends AbstractFetchStateModel {
     {{ entity_camel }}?: any | null;
@@ -14,7 +14,7 @@ export const {{'initial' + entity_pascal + 'State'}}: State = {
     failure: null
 };
 
-export const {{ entity_reducer }} = createReducer(
+export const {{ reducer_name }} = createReducer(
     {{ 'initial' + entity_pascal + 'State' }},
     on(actions.{{ evt_get_list | pascalcase }}, (state) => ({
         ...state,

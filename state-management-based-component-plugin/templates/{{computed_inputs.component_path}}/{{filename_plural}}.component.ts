@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { {{ facade_service_pascal }} } from './services/{{ entity_filename }}.facade.service';
+import { {{ facade_service_pascal }} } from './services/{{ filename }}.facade.service';
 
 /**
  * @author Paulo W. A. Ferreira
@@ -10,11 +10,11 @@ import { {{ facade_service_pascal }} } from './services/{{ entity_filename }}.fa
  */
 
 @Component({
-  selector: 'app-{{ entity_filename_plural }}',
-  templateUrl: './{{ entity_filename_plural }}.component.html',
-  styleUrls: ['./{{ entity_filename_plural }}.component.scss']
+  selector: 'app-{{ filename_plural }}',
+  templateUrl: './{{ filename_plural }}.component.html',
+  styleUrls: ['./{{ filename_plural }}.component.scss']
 })
-export class {{ entity_component }} implements OnInit {
+export class {{ component_name }} implements OnInit {
 
   {{ entity_camel_plural }}: any | null | undefined = [];
   {{ entity_camel + 'Selected' }}: any;

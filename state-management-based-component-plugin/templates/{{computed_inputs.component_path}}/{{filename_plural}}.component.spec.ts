@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { {{ entity_component }} } from './{{ entity_filename }}.component';
+import { {{ component_name }} } from './{{ filename }}.component';
 
-describe('{{ entity_component }}', () => {
-  let component: {{ entity_component }};
-  let fixture: ComponentFixture<{{ entity_component }}>;
+describe('{{ component_name }}', () => {
+  let component: {{ component_name }};
+  let fixture: ComponentFixture<{{ component_name }}>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ {{ entity_component }} ]
+      declarations: [ {{ component_name }} ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent({{ entity_component }});
+    fixture = TestBed.createComponent({{ component_name }});
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

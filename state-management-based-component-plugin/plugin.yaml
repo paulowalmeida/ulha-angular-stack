@@ -58,23 +58,23 @@ computedInputs:
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_camel_plural": "{{ entity_plural | camelcase }}"
   
-  "entity_filename": "{{ entity_name | replace(' ', '-') }}"
-  "entity_filename_plural": "{{ entity_plural | replace(' ', '-') }}"
-  
-  "entity_failure_model": "{{ entity_pascal + 'FailureModel' }}"
-  
+  "filename": "{{ entity_name | replace(' ', '-') }}"
+  "filename_plural": "{{ entity_plural | replace(' ', '-') }}"
+  "component_path": "{{ inputs.component_path + computed_inputs.filename_plural }}"
+
+  "failure_model": "{{ entity_pascal + 'FailureModel' }}"
   "api_resouce_name": "{{ api_resource | replace(' ', '-') }}"
-  "component_path": "{{ inputs.component_path + computed_inputs.entity_filename_plural }}"
-  "entity_component": "{{ entity_pascal_plural + 'Component' }}"
-  "entity_module": "{{ entity_pascal_plural + 'Module' }}"
+  "component_name": "{{ entity_pascal_plural + 'Component' }}"
+  "module_name": "{{ entity_pascal_plural + 'Module' }}"
+  
   "service_camel": "{{ entity_camel + 'Service' }}"
   "service_pascal": "{{ entity_pascal + 'Service' }}"
   "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
   "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
   
-  "entity_effects": "{{ entity_pascal + 'Effects' }}"
-  "entity_reducer": "{{ entity_camel + 'Reducer' }}"
-  "entity_feature_selector": "{{ entity_camel_plural + 'FeatureSelector' }}"
+  "effects_name": "{{ entity_pascal + 'Effects' }}"
+  "reducer_name": "{{ entity_camel + 'Reducer' }}"
+  "feature_selector_name": "{{ entity_camel_plural + 'FeatureSelector' }}"
 
 hooks:
   - type: run-script

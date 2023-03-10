@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { {{ entity_failure_model }} } from '../models/{{ entity_filename }}-failure.model';
+import { {{ failure_model }} } from '../models/{{ filename }}-failure.model';
 
 export const {{ evt_get_list| pascalcase }} = createAction(
     '[{{ evt_get_list| pascalcase }}] {{evt_get_list| title }}'
@@ -12,7 +12,7 @@ export const {{ evt_get_list_success| pascalcase }} = createAction(
 
 export const {{ evt_get_list_failure| pascalcase }} = createAction(
     '[{{ evt_get_list_failure| pascalcase }}] {{evt_get_list_failure| title }}',
-    props<{ failure: {{ entity_failure_model }} }>()
+    props<{ failure: {{ failure_model }} }>()
 );
 
 export const {{ evt_get_item| pascalcase }} = createAction(
@@ -27,7 +27,7 @@ export const {{ evt_get_item_success| pascalcase }} = createAction(
 
 export const {{ evt_get_item_failure| pascalcase }} = createAction(
     '[{{ evt_get_item_failure| pascalcase }}] {{evt_get_item_failure| title }}',
-    props<{ failure: {{ entity_failure_model }} }>()
+    props<{ failure: {{ failure_model }} }>()
 );
 
 export const {{ evt_post_item| pascalcase }} = createAction(
@@ -42,7 +42,7 @@ export const {{ evt_post_item_success| pascalcase }} = createAction(
 
 export const {{ evt_post_item_failure| pascalcase }} = createAction(
     '[{{ evt_post_item_failure| pascalcase }}] {{evt_post_item_failure| title }}',
-    props<{ failure: {{ entity_failure_model }} }>()
+    props<{ failure: {{ failure_model }} }>()
 );
 
 export const {{ evt_put_item| pascalcase }} = createAction(
@@ -57,7 +57,7 @@ export const {{ evt_put_item_success| pascalcase }} = createAction(
 
 export const {{ evt_put_item_failure| pascalcase }} = createAction(
     '[{{ evt_put_item_failure| pascalcase }}] {{ evt_put_item_failure| title }}',
-    props<{ failure: {{ entity_failure_model }} }>()
+    props<{ failure: {{ failure_model }} }>()
 );
 
 export const {{ evt_delete_item| pascalcase }} = createAction(
@@ -71,5 +71,5 @@ export const {{ evt_delete_item_success| pascalcase }} = createAction(
 
 export const {{ evt_delete_item_failure| pascalcase }} = createAction(
     '[{{ evt_delete_item_failure| pascalcase }}] {{ evt_delete_item_failure| title }}',
-    props<{ failure: {{ entity_failure_model }} }>()
+    props<{ failure: {{ failure_model }} }>()
 );

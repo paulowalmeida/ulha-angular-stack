@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { {{ facade_service_pascal }} } from './{{ entity_filename }}.facade.service';
+import { {{ facade_service_pascal }} } from './{{ filename }}.facade.service';
 
 describe('{{ facade_service_pascal }}', () => {
   let service: {{ facade_service_pascal }};

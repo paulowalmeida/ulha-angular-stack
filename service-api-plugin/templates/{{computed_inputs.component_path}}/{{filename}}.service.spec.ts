@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { {{ service_classname }} } from './{{ service_filename }}.service';
+import { {{ service_classname }} } from './{{ filename }}.service';
 
 describe('{{ service_classname }}', () => {
   let service: {{ service_classname }};

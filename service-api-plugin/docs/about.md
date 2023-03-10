@@ -15,11 +15,11 @@ The motivation for creating this plugin stems from the analysis that most servic
 So how about having a good part of this code already using this plugin?
 
 ## **Methods**
-- get_entity_name_s
-- get_entity_name_ById
-- save_entity_name
-- edit_entity_name
-- remove_entity_name
+- get_resource_s
+- get_resource_ById
+- save_resource
+- edit_resource
+- remove_resource
 
 By default, the typing used in these methods is any, but as the plugin evolves, we will look for ways to allow the inclusion of typing during plugin application.
 

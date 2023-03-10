@@ -4,12 +4,12 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { of } from "rxjs";
 import { catchError, map, mergeMap } from "rxjs/operators";
-import { {{ service_pascal }} } from "../services/{{ entity_filename }}.service";
-import * as actions from "./{{ entity_filename }}.actions";
-import { State } from "./{{ entity_filename }}.reducer";
+import { {{ service_pascal }} } from "../services/{{ filename }}.service";
+import * as actions from "./{{ filename }}.actions";
+import { State } from "./{{ filename }}.reducer";
 
 @Injectable()
-export class {{ entity_effects }} {
+export class {{ effects_name }} {
     {{ get_list }}$ = createEffect(() =>
         this.actions$.pipe(
             ofType(actions.{{ evt_get_list | pascalcase }}),

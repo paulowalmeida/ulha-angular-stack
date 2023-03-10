@@ -42,18 +42,17 @@ computedInputs:
   "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_camel_plural": "{{ entity_plural | camelcase }}"
-  "entity_filename": "{{ entity_name | replace(' ', '-') }}"
-  "entity_failure": "{{ entity_name + ' Failure' }}"
-  "entity_failure_model": "{{ entity_pascal + 'FailureModel' }}"
   "component_path": "{{ inputs.component_path + inputs.entity_name + 's' }}"
+  
+  "filename": "{{ entity_name | replace(' ', '-') }}"
+  "failure_model": "{{ entity_pascal + 'FailureModel' }}"
 
   "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
   "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
 
-  "entity_effects": "{{ entity_pascal + 'Effects' }}"
-
-  "entity_reducer": "{{ entity_camel + 'Reducer' }}"
-  "entity_feature_selector": "{{ entity_camel_plural + 'FeatureSelector' }}"
+  "effects_name": "{{ entity_pascal + 'Effects' }}"
+  "reducer_name": "{{ entity_camel + 'Reducer' }}"
+  "feature_selector_name": "{{ entity_camel_plural + 'FeatureSelector' }}"
 
 hooks:
   - type: run-script
@@ -94,7 +93,7 @@ hooks:
           - NgModule:
               - attribute: imports
                 insert: |
-                  StoreModule.forRoot({ {{ entity_feature_selector }}: {{ entity_reducer }} }),
+                  StoreModule.forRoot({ {{ feature_selector_name }}: {{ reducer_name }} }),
                   EffectsModule.forRoot({}),
                   StoreDevtoolsModule.instrument()
     condition:

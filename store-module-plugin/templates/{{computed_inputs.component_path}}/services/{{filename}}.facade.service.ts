@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State } from "../store/{{ entity_filename }}.reducer";
-import * as selectors from '../store/{{ entity_filename }}.selectors';
-import * as actions from "../store/{{ entity_filename }}.actions";
+import { State } from "../store/{{ filename }}.reducer";
+import * as selectors from '../store/{{ filename }}.selectors';
+import * as actions from "../store/{{ filename }}.actions";
 
 @Injectable({
   providedIn: 'root'

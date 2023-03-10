@@ -6,7 +6,6 @@ inputs:
   - label: Project name
     type: text
     name: project_name
-  
   - label: Angular version
     type: text
     items:
@@ -30,7 +29,6 @@ inputs:
     - ~9.1.15
     - ~9.0.7
     name: angular_version
-
   - label: Style
     type: text
     items:
@@ -39,13 +37,11 @@ inputs:
     - saas
     - less
     name: style_type
-
 hooks:
   - type: run
     trigger: after-render
     commands:
       - echo Creating the base project. wait...
-
   - type: run
     trigger: after-render
     linux:
@@ -54,17 +50,14 @@ hooks:
       - npx.cmd @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --skip-install
     mac:
       - npx @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --skip-install
-
   - type: run-script
     trigger: after-render
     script: ../scripts/handle-files-after-build.py
-
   - type: run
     trigger: after-render
     commands:
       - echo Base project creation is complete!
       - echo Dependencies are being downloaded and configured...
-
   - type: run
     trigger: after-render
     linux:
@@ -73,7 +66,6 @@ hooks:
       - npm.cmd i
     mac:
       - npm i
-
   - type: run
     trigger: after-render
     commands:
