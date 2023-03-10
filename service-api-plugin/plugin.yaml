@@ -69,3 +69,10 @@ hooks:
       variable: config_module
       operator: "=="
       value: true
+  
+  - type: run
+    trigger: after-render
+    commands:
+      - echo Ulha! Your service has been create!
+      - echo You can read doc files to more informations about to use the plugin ;)
+      - echo Enjoy Dev!

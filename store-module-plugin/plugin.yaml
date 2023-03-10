@@ -101,3 +101,12 @@ hooks:
     variable: config_imports
     operator: "=="
     value: true
+  
+  - type: run
+    trigger: after-render
+    commands:
+      - echo Ulha! Your store module has been create! 
+      - You can add now in any module to manager it. =)
+      - Also don't forget to configure the effects on .effects.ts file ;)
+      - echo You can read doc files to more informations about to use the plugin ;)
+      - echo Enjoy Dev!

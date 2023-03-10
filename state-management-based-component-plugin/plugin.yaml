@@ -57,11 +57,12 @@ computedInputs:
   "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_camel_plural": "{{ entity_plural | camelcase }}"
+  
   "entity_filename": "{{ entity_name | replace(' ', '-') }}"
   "entity_filename_plural": "{{ entity_plural | replace(' ', '-') }}"
-  "entity_success": "{{ entity_name + ' Success' }}"
-  "entity_failure": "{{ entity_name + ' Failure' }}"
+  
   "entity_failure_model": "{{ entity_pascal + 'FailureModel' }}"
+  
   "api_resouce_name": "{{ api_resource | replace(' ', '-') }}"
   "component_path": "{{ inputs.component_path + computed_inputs.entity_filename_plural }}"
   "entity_component": "{{ entity_pascal_plural + 'Component' }}"
@@ -70,6 +71,7 @@ computedInputs:
   "service_pascal": "{{ entity_pascal + 'Service' }}"
   "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
   "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
+  
   "entity_effects": "{{ entity_pascal + 'Effects' }}"
   "entity_reducer": "{{ entity_camel + 'Reducer' }}"
   "entity_feature_selector": "{{ entity_camel_plural + 'FeatureSelector' }}"
@@ -126,6 +128,6 @@ hooks:
   - type: run
     trigger: after-render
     commands:
-      - echo Great! Your component has been create! You can add now in any module to manager it. =)
-      - echo You can read README.md file to more informations about to use the plugin ;)
+      - echo Ulha! Your component has been create! You can add now in any module to manager it. =)
+      - echo You can read doc files to more informations about to use the plugin ;)
       - echo Enjoy Dev!

@@ -82,7 +82,7 @@ hooks:
   - type: run
     trigger: after-render
     commands:
-      - echo Success!
+      - echo Ulha!
       - echo You have created the project based on version {{angular_version}}
       - echo Make you sure using node.js compatible.
       - echo More informations in link https://stackoverflow.com/a/60258560
