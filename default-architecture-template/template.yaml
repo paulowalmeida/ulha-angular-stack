@@ -40,11 +40,6 @@ inputs:
     - less
     name: style_type
 
-  - label: Do you want create app.routing.module.ts ?
-    type: bool
-    name: has_routing
-    default: true
-
 hooks:
   - type: run
     trigger: after-render
@@ -54,11 +49,11 @@ hooks:
   - type: run
     trigger: after-render
     linux:
-      - npx -p @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
+      - npx -p @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --skip-install=true
     windows:
-      - npx.cmd @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
+      - npx.cmd -p @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --skip-install=true
     mac:
-      - npx @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
+      - npx -p @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --skip-install=true
 
   - type: run-script
     trigger: after-render
