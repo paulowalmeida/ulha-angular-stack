@@ -49,7 +49,7 @@ computedInputs:
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_name": "{{ entity_name | replace(' ', '-')}}"
   "service_filename": "{{ entity_name | replace(' ', '-')}}"
-  "service_classname": "{{ entity_pascalcase + 'Service'}}"
+  "service_classname": "{{ entity_pascal + 'Service'}}"
   "component_path": "{{ inputs.component_path + computed_inputs.service_filename }}"
 hooks:
   - type: run-script
