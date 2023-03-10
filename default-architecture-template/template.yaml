@@ -54,11 +54,11 @@ hooks:
   - type: run
     trigger: after-render
     linux:
-      - npx @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
+      - npx -p @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
     windows:
-      - npx.cmd @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
+      - npx.cmd @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
     mac:
-      - npx @angular/cli@{{angular_version}} new {{project_name}} --style={{style_type}} --routing={{has_routing}} --skip-install
+      - npx @angular/cli@{{angular_version}} ng new {{project_name}} --style={{style_type}} --routing={{has_routing}}  --skip-install=true
 
   - type: run-script
     trigger: after-render
