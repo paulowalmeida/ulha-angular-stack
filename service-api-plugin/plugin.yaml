@@ -24,25 +24,29 @@ inputs:
     type: text
     name: api_host
     default: localhost
+  
   - label: What is the host port?
     type: int
     name: api_port
     default: 3000
+  
   - label: What is the entity name (resource)? Please input name in single
     type: text
     name: entity_name
     default: "pet"
+  
   - label: What is the path where the component will be create?
     type: text
     name: component_path
     default: src/app/
+  
   - label: Do you want configure http module?
     type: bool
     name: config_module
     default: false
 computedInputs:
-  "entity_pascalcase": "{{ entity_name | pascalcase }}"
-  "entity_camelcase": "{{ entity_name | camelcase }}"
+  "entity_pascal": "{{ entity_name | pascalcase }}"
+  "entity_camel": "{{ entity_name | camelcase }}"
   "entity_name": "{{ entity_name | replace(' ', '-')}}"
   "service_filename": "{{ entity_name | replace(' ', '-')}}"
   "service_classname": "{{ entity_pascalcase + 'Service'}}"

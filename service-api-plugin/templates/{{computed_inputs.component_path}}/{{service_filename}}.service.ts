@@ -27,17 +27,17 @@ export class {{ service_classname }} {
     }
   }
 
-  {{ save_item }}({{ entity_camelcase }}: any): Observable<any> {
+  {{ save_item }}({{ entity_camel }}: any): Observable<any> {
     try {
-      return this.http.post<any>(BASE_URL, {{ entity_camelcase }});
+      return this.http.post<any>(BASE_URL, {{ entity_camel }});
     } catch (error) {
       return of(new Error('Error creating selected {{ entity_name }}.'));
     }
   }
 
-  {{ edit_item }}({{ entity_camelcase }}: any): Observable<any> {
+  {{ edit_item }}({{ entity_camel }}: any): Observable<any> {
     try {
-      return this.http.patch<any>(BASE_URL + '/' + {{entity_camelcase + '.id'}}, {{ entity_camelcase }});
+      return this.http.patch<any>(BASE_URL + '/' + {{entity_camel + '.id'}}, {{ entity_camel }});
     } catch (error) {
       return of(new Error('Error updating selected {{ entity_name }}.'));
     }
