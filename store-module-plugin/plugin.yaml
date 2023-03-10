@@ -107,6 +107,6 @@ hooks:
     commands:
       - echo Ulha! Your store module has been create! 
       - echo You can add now in any module to manager it. =)
-      - echo Also don't forget to configure the effects on .effects.ts file ;)
+      - echo Also dont forget to configure the effects on .effects.ts file ;)
       - echo You can read doc files to more informations about to use the plugin ;)
       - echo Enjoy Dev!
