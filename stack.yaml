@@ -7,7 +7,6 @@ compatibility:
   - Angular
 technologies:
   - Typescript
-  - Ngrx/store
   - Web
 about: docs/about.md
 use-cases:
