@@ -6,6 +6,7 @@ category: frontend
 compatibility:
   - Angular
 technologies:
+  - Angular
   - Typescript
   - Web
 about: docs/about.md

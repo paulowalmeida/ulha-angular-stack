@@ -79,7 +79,7 @@ computedInputs:
 hooks:
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-http-variables.py
+    script: ../scripts/build-crud-variables.py
 
   - type: run-script
     trigger: before-render

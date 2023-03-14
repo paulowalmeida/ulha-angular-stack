@@ -1,0 +1,9 @@
+name: ulha-architecture-template
+description: Project architecture proposal that delivers a set of good concepts and helps you to start your application development.
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+    default: project-name
