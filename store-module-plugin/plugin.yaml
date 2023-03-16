@@ -16,21 +16,21 @@ technologies:
 types:
   - app
 inputs:
-  - label: What is the entity name (use lowercase and if it is compound name use spaces between word)
+  - label: Entity to be managed by the store (use lowercase and if it is compound name use spaces between word)
     type: text
     name: entity_name
     default: pet
-  
+
   - label: What is the path where the component will be create?
     type: text
-    name: component_path
+    name: store_path
     default: src/app/
-  
+
   - label: Do you want download ngrx/store dependencies?
     type: bool
     name: download_deps
     default: true
-  
+
   - label: Do you want configure ngrx/store modules.forRoot in app.module.ts?
     type: bool
     name: config_imports
@@ -42,8 +42,8 @@ computedInputs:
   "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_camel_plural": "{{ entity_plural | camelcase }}"
-  "component_path": "{{ inputs.component_path + inputs.entity_name + 's' }}"
-  
+  "store_path": "{{ inputs.store_path + inputs.entity_name + 's' }}"
+
   "filename": "{{ entity_name | replace(' ', '-') }}"
   "failure_model": "{{ entity_pascal + 'FailureModel' }}"
 
@@ -57,12 +57,12 @@ computedInputs:
 hooks:
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-crud-variables.py
-  
+    script: scripts/build-crud-variables.py
+
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-store-variables.py
-  
+    script: scripts/build-store-variables.py
+
   - type: run
     trigger: after-render
     linux:
@@ -78,7 +78,7 @@ hooks:
       variable: download_deps
       operator: "=="
       value: true
-  
+
   - type: code-transformation
     trigger: after-render
     path: src/app/app.module.ts
@@ -100,11 +100,11 @@ hooks:
     variable: config_imports
     operator: "=="
     value: true
-  
+
   - type: run
     trigger: after-render
     commands:
-      - echo Ulha! Your store module has been create! 
+      - echo Ulha! Your store module has been create!
       - echo You can add now in any module to manager it. =)
       - echo Also dont forget to configure the effects on .effects.ts file ;)
       - echo You can read doc files to more informations about to use the plugin ;)

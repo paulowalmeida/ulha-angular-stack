@@ -20,32 +20,32 @@ inputs:
     type: text
     name: entity_name
     default: pet
-  
+
   - label: What is the path where the component will be create?
     type: text
     name: component_path
     default: src/app/
-  
+
   - label: What is the api host?
     type: text
     name: api_host
     default: localhost
-  
+
   - label: What is the host port?
     type: int
     name: api_port
     default: 3000
-  
+
   - label: What is the host resource name?
     type: text
     name: api_resource
     default: "pets"
-  
+
   - label: Do you want download ngrx/store dependencies?
     type: bool
     name: download_deps
     default: true
-  
+
   - label: Do you want configure ngrx/store modules.forRoot in app.module.ts??
     type: bool
     name: config_imports
@@ -57,7 +57,7 @@ computedInputs:
   "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
   "entity_camel": "{{ entity_name | camelcase }}"
   "entity_camel_plural": "{{ entity_plural | camelcase }}"
-  
+
   "filename": "{{ entity_name | replace(' ', '-') }}"
   "filename_plural": "{{ entity_plural | replace(' ', '-') }}"
   "component_path": "{{ inputs.component_path + computed_inputs.filename_plural }}"
@@ -66,12 +66,12 @@ computedInputs:
   "api_resouce_name": "{{ api_resource | replace(' ', '-') }}"
   "component_name": "{{ entity_pascal_plural + 'Component' }}"
   "module_name": "{{ entity_pascal_plural + 'Module' }}"
-  
+
   "service_camel": "{{ entity_camel + 'Service' }}"
   "service_pascal": "{{ entity_pascal + 'Service' }}"
   "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
   "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
-  
+
   "effects_name": "{{ entity_pascal + 'Effects' }}"
   "reducer_name": "{{ entity_camel + 'Reducer' }}"
   "feature_selector_name": "{{ entity_camel_plural + 'FeatureSelector' }}"
@@ -79,11 +79,11 @@ computedInputs:
 hooks:
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-crud-variables.py
+    script: scripts/build-crud-variables.py
 
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-store-variables.py
+    script: scripts/build-store-variables.py
 
   - type: run
     trigger: after-render

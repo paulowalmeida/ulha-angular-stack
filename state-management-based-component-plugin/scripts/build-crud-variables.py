@@ -24,8 +24,8 @@ def buildMethodValue(method_name, entity_name, i):
     suffix = ''
 
     if i == 0:
-        suffix = 's'
+        suffix = 'List'
     if i == 1:
         suffix = 'ById'
-     
+
     return method_name + entity_name + suffix

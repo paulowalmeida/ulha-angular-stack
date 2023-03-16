@@ -18,40 +18,47 @@ technologies:
 types:
   - app
 inputs:
-  - label: What is the api host?
+  - label: Service name
+    type: text
+    name: service_name
+    default: pet
+
+  - label: Service path
+    type: text
+    name: service_path
+    default: src/app/
+
+  - label: API host
     type: text
     name: api_host
     default: localhost
-  
-  - label: What is the host port?
+
+  - label: Host port
     type: int
     name: api_port
     default: 3000
-  
-  - label: What is the entity name (resource)? Please input name in single
+
+  - label: Resouce name (Please input name in single)
     type: text
-    name: entity_name
-    default: "pet"
-  
-  - label: What is the path where the component will be create?
-    type: text
-    name: component_path
-    default: src/app/
-  
+    name: resource_name
+    default: pet
+
   - label: Do you want configure http module?
     type: bool
     name: config_module
     default: false
+
 computedInputs:
-  "entity_pascal": "{{ entity_name | pascalcase }}"
-  "entity_camel": "{{ entity_name | camelcase }}"
-  "filename": "{{ entity_name | replace(' ', '-')}}"
-  "component_path": "{{ inputs.component_path + computed_inputs.filename }}"
-  "service_classname": "{{ entity_pascal + 'Service'}}"
+  "service_filename": "{{ service_name | replace(' ', '-') }}"
+  "service_classname": "{{ service_name | pascalcase + 'Service'}}"
+  "resouce_pascal": "{{ resource_name | pascalcase }}"
+  "resouce_camel": "{{ resource_name | camelcase }}"
+  "service_path": "{{ inputs.service_path + computed_inputs.service_filename }}"
+
 hooks:
   - type: run-script
     trigger: before-render
-    script: ../scripts/build-crud-variables.py
+    script: scripts/build-crud-variables.py
   - type: code-transformation
     trigger: after-render
     working-dir: "{{target_path}}"
@@ -70,7 +77,7 @@ hooks:
       variable: config_module
       operator: "=="
       value: true
-  
+
   - type: run
     trigger: after-render
     commands:
