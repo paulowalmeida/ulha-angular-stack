@@ -1,5 +1,5 @@
 <!-- A sample to use ngrx/store -->
-<h1>{{ entity_name | title}} List</h1>
+<h1>{{ entity_store_name | title}} List</h1>
 
 <table>
     <thead>
@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let {{ entity_camel }} of {{ entity_plural }}">
+        <tr *ngFor="let {{ entity_camel }} of {{ entity_store_plural }}">
             <td>{{ '{{' + entity_camel + '.id}}' }}</td>
             <td>{{ '{{' + entity_camel + '.name}}' }}</td>
             <td><button (click)="showDetails({{ entity_camel + '.id' }})">Details</button></td>

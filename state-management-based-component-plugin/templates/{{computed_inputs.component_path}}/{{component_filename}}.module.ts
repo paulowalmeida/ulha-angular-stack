@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { {{ component_name }} } from './{{ filename_plural }}.component';
+import { {{ component_classname }} } from './{{ component_filename }}.component';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    {{ component_name }}
+    {{ component_classname }}
   ],
   imports: [
     CommonModule,
@@ -19,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EffectsModule.forFeature([{{ effects_name }}])
   ],
   exports: [
-    {{ component_name }}
+    {{ component_classname }}
   ]
 })
 export class {{ module_name }} { }

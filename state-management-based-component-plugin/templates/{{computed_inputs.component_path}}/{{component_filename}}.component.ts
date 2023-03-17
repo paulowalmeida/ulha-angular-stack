@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { {{ facade_service_pascal }} } from './services/{{ filename }}.facade.service';
+import { {{ facade_service_classname }} } from './services/facade/{{ filename }}.facade.service';
 
 /**
  * @author Paulo W. A. Ferreira
@@ -10,11 +10,11 @@ import { {{ facade_service_pascal }} } from './services/{{ filename }}.facade.se
  */
 
 @Component({
-  selector: 'app-{{ filename_plural }}',
-  templateUrl: './{{ filename_plural }}.component.html',
-  styleUrls: ['./{{ filename_plural }}.component.scss']
+  selector: '{{ selector_name }}',
+  templateUrl: './{{ component_filename }}.component.html',
+  styleUrls: ['./{{ component_filename }}.component.scss']
 })
-export class {{ component_name }} implements OnInit {
+export class {{ component_classname }} implements OnInit {
 
   {{ entity_camel_plural }}: any | null | undefined = [];
   {{ entity_camel + 'Selected' }}: any;
@@ -24,13 +24,13 @@ export class {{ component_name }} implements OnInit {
   showMode: 'edit' | 'view' = 'view';
 
   constructor(
-    private {{ facade_service_calmel }}: {{ facade_service_pascal }},
+    private {{ facade_service_instance }}: {{ facade_service_classname }},
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.createForm();
-    this.get{{ entity_pascal_plural }}();
+    this.{{ get_list }}();
   }
 
   clearFields() {
@@ -45,7 +45,7 @@ export class {{ component_name }} implements OnInit {
   }
 
   edit(id: number) {
-    this.{{ facade_service_calmel }}.{{ get_item }}(id).subscribe({{ entity_camel +'Found' }} => {
+    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_camel +'Found' }} => {
       this.{{ entity_camel + 'Selected' }} = {{ entity_camel +'Found' }};
       this.form.patchValue({ name: {{ entity_camel +'Found' }}.name });
       this.form.patchValue({ breed: {{ entity_camel +'Found' }}.breed });
@@ -55,7 +55,7 @@ export class {{ component_name }} implements OnInit {
     });
     this.formButtonLabel = 'Update';
     this.showMode = 'edit';
-    this.get{{ entity_pascal_plural }}();
+    this.{{ get_list }}();
   }
 
   formatAge(age: any) {
@@ -65,7 +65,7 @@ export class {{ component_name }} implements OnInit {
   }
 
   showDetails(id: any) {
-    this.{{ facade_service_calmel }}.{{ get_item }}(id).subscribe({{ entity_camel }} => this.{{ entity_camel + 'Selected' }} = {{ entity_camel }});
+    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_camel }} => this.{{ entity_camel + 'Selected' }} = {{ entity_camel }});
     this.showMode = 'view';
   }
 
@@ -82,19 +82,19 @@ export class {{ component_name }} implements OnInit {
     };
 
     this.formButtonLabel === 'Submit'
-      ? this.{{ facade_service_calmel }}.{{ save_item }}(this.{{ entity_camel + 'Values' }})
-      : this.{{ facade_service_calmel }}.{{ edit_item }}(this.{{ entity_camel + 'Values' }});
+      ? this.{{ facade_service_instance }}.{{ save_item }}(this.{{ entity_camel + 'Values' }})
+      : this.{{ facade_service_instance }}.{{ edit_item }}(this.{{ entity_camel + 'Values' }});
 
     this.createForm();
     this.formButtonLabel = 'Submit';
     this.showMode = 'view';
     this.{{ entity_camel + 'Selected' }} = null;
-    this.get{{ entity_pascal_plural }}();
+    this.{{ get_list }}();
   }
 
   remove(id: number) {
-    this.{{ facade_service_calmel }}.{{ remove_item }}(id);
-    this.get{{ entity_pascal_plural }}();
+    this.{{ facade_service_instance }}.{{ remove_item }}(id);
+    this.{{ get_list }}();
   }
 
   private createForm() {
@@ -107,8 +107,8 @@ export class {{ component_name }} implements OnInit {
     })
   }
 
-  private get{{ entity_pascal_plural }}() {
-    this.{{ facade_service_calmel }}.{{ get_list }}(true).subscribe({{ entity_camel_plural }} => {
+  private {{ get_list }}() {
+    this.{{ facade_service_instance }}.{{ get_list }}(true).subscribe({{ entity_camel_plural }} => {
       this.{{ entity_camel_plural }} = {{ entity_camel_plural }};
     });
   }

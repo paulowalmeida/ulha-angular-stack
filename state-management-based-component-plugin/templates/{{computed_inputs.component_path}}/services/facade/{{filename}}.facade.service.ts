@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State } from "../store/{{ filename }}.reducer";
-import * as selectors from '../store/{{ filename }}.selectors';
-import * as actions from "../store/{{ filename }}.actions";
+import { State } from "../../store/{{ filename }}.reducer";
+import * as selectors from '../../store/{{ filename }}.selectors';
+import * as actions from "../../store/{{ filename }}.actions";
 
 @Injectable({
   providedIn: 'root'
 })
-export class {{ facade_service_pascal }} {
+export class {{ facade_service_classname }} {
 
   constructor(readonly store: Store<State>) { }
 

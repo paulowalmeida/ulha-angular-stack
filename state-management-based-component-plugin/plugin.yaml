@@ -16,9 +16,19 @@ technologies:
 types:
   - app
 inputs:
-  - label: What is the entity name (use lowercase and if it is compound name use spaces between word)
+  - label: Component name (use lowercase and if it is compound name use spaces between word)
     type: text
-    name: entity_name
+    name: component_name
+    default: pets
+
+  - label: Component selector name
+    type: text
+    name: selector_name
+    default: app-pets
+
+  - label: Entity to be managed by the store (use lowercase and if it is compound name use spaces between word)
+    type: text
+    name: entity_store_name
     default: pet
 
   - label: What is the path where the component will be create?
@@ -26,20 +36,30 @@ inputs:
     name: component_path
     default: src/app/
 
-  - label: What is the api host?
+  - label: Service name
+    type: text
+    name: service_name
+    default: pet
+
+  - label: API host
     type: text
     name: api_host
     default: localhost
 
-  - label: What is the host port?
+  - label: Host port
     type: int
     name: api_port
     default: 3000
 
-  - label: What is the host resource name?
+  - label: Resouce name (Please input name in single)
     type: text
-    name: api_resource
-    default: "pets"
+    name: resource_name
+    default: pet
+
+  - label: Do you want configure http module?
+    type: bool
+    name: config_module
+    default: false
 
   - label: Do you want download ngrx/store dependencies?
     type: bool
@@ -52,25 +72,31 @@ inputs:
     default: true
 
 computedInputs:
-  "entity_plural": "{{ entity_name + 's' }}"
-  "entity_pascal": "{{ entity_name | pascalcase }}"
-  "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
-  "entity_camel": "{{ entity_name | camelcase }}"
-  "entity_camel_plural": "{{ entity_plural | camelcase }}"
+  "component_pascal": "{{ component_name | pascalcase}}"
+  "component_filename": "{{ component_name | replace(' ', '-') }}"
+  "component_classname": "{{ component_pascal + 'Component' }}"
+  "module_name": "{{ component_pascal + 'Module' }}"
 
-  "filename": "{{ entity_name | replace(' ', '-') }}"
-  "filename_plural": "{{ entity_plural | replace(' ', '-') }}"
+  "entity_store_plural": "{{ entity_store_name + 's' }}"
+  "entity_pascal": "{{ entity_store_name | pascalcase }}"
+  "entity_pascal_plural": "{{ entity_store_plural | pascalcase }}"
+  "entity_camel": "{{ entity_store_name | camelcase }}"
+  "entity_camel_plural": "{{ entity_store_plural | camelcase }}"
+
+  "filename": "{{ entity_store_name | replace(' ', '-') }}"
+  "filename_plural": "{{ entity_store_plural | replace(' ', '-') }}"
   "component_path": "{{ inputs.component_path + computed_inputs.filename_plural }}"
 
   "failure_model": "{{ entity_pascal + 'FailureModel' }}"
-  "api_resouce_name": "{{ api_resource | replace(' ', '-') }}"
-  "component_name": "{{ entity_pascal_plural + 'Component' }}"
-  "module_name": "{{ entity_pascal_plural + 'Module' }}"
 
-  "service_camel": "{{ entity_camel + 'Service' }}"
-  "service_pascal": "{{ entity_pascal + 'Service' }}"
-  "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
-  "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
+  "service_filename": "{{ service_name | replace(' ', '-') }}"
+  "service_classname": "{{ service_name | pascalcase + 'Service'}}"
+  "service_instance": "{{ service_name | camelcase + 'Service' }}"
+  "resouce_pascal": "{{ resource_name | pascalcase }}"
+  "resouce_camel": "{{ resource_name | camelcase }}"
+
+  "facade_service_instance": "{{ entity_camel + 'FacadeService' }}"
+  "facade_service_classname": "{{ entity_pascal + 'FacadeService' }}"
 
   "effects_name": "{{ entity_pascal + 'Effects' }}"
   "reducer_name": "{{ entity_camel + 'Reducer' }}"
