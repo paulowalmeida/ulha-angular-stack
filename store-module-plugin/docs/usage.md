@@ -34,6 +34,25 @@ From that point on, you must enter some information.
 
 ### 5. After it, you see something like this on screen and your project is create with success
 ```sh
+up to date, audited 929 packages in 8s
+
+93 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+up to date, audited 929 packages in 2s
+
+93 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Ulha! Your store module has been create!
+You can add now in any module to manager it. =)
+Also dont forget to configure the effects on .effects.ts file ;)
+You can read doc files to more informations about to use the plugin ;)
+Enjoy Dev!
+- Plugin ulha-angular-stack/store-module-plugin applied.
 ```
 
 Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
