@@ -18,10 +18,32 @@ stk list stack | grep ulha-angular-stack
 stk apply plugin ulha-angular-stack/service-api-plugin
 ```
 
-### 4. Check the changes in your project
-
+## Applying the plugin in your application
+From that point on, you must enter some information.
 ```sh
-git status
+? Service name  (pet)
+```
+```sh
+? Service path  (src/app/)
+```
+```sh
+? API host  (localhost)
+```
+```sh
+? Host port  (3000)
+```
+```sh
+? Resouce name (Please input name in single)  (pet)
+```
+```sh
+? Do you want configure http module? (y/N) (No)
+```
+### 5. After it, you see something like this on screen and your project is create with success
+```sh
+Ulha! Your service has been create!
+You can read doc files to more informations about to use the plugin ;)
+Enjoy Dev!
+- Plugin ulha-angular-stack/service-api-plugin applied.
 ```
 
 Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
