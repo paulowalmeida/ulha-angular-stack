@@ -15,7 +15,6 @@ def buildCrudMethodNames(computed_inputs, entity_name):
         method_name = methods_name[i]
         method_var = buildMethodVar(method_name,i)
         method_value = buildMethodValue(method_name, entity_name, i)
-        print(method_var + ": " + method_value)
         computed_inputs[method_var] = method_value
 
 def buildMethodVar(method_name, i):
