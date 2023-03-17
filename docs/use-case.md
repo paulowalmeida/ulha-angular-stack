@@ -43,6 +43,20 @@ stk create app <app_name> -t ulha-angular-stack/default-architecture-template
    i) ~9.0.7
   Answer: 1) ~15.0.0
 ```
+```sh
+? Style (Use shortcuts or arrow keys)
+ » 1) scss
+   2) css
+   3) saas
+   4) less
+  Answer: 1) scss
+```
+```sh
+? Add app-rounting.module.ts ? (Y/N) (Yes)
+```
+```sh
+? Download and install angular dependencies? (Y/N) (Yes)
+```
 ### 5. After it, you see something like this on screen and your project is create with success
 ```sh
 Creating the base project. wait...

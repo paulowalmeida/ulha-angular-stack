@@ -20,6 +20,7 @@ stk apply plugin ulha-angular-stack/store-module-plugin
 ### 4. Applying the plugin in your application
 From that point on, you must enter some information.
 
+```sh
 ? Entity to be managed by the store (use lowercase and if it is compound name use spaces between word)  (pet)
 ```
 ```sh
@@ -54,7 +55,3 @@ You can read doc files to more informations about to use the plugin ;)
 Enjoy Dev!
 - Plugin ulha-angular-stack/store-module-plugin applied.
 ```
-
-Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
-
-I hope can help you in your development. ;)

@@ -15,5 +15,8 @@ EffectsModule.forFeature([<yourEffects>])
 Make sure the imports are correct.
 
 And that's it. Now you can use or modify the store to suit your needs.
-Hope I can help you with this plugin. ;)
+
+Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
+
+I hope can help you in your development. ;)
 
