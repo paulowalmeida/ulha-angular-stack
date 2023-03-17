@@ -1,6 +1,6 @@
-# **State Management Based Component Plugin**
+# **State Based Component Plugin**
 
-The State Management Based Component Plugin is an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
+The State Based Component Plugin is an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
 
 This plugin supports being installed in both angular projects created from the stack and by the conventional method.
 
@@ -13,7 +13,7 @@ Next you see more details about the plugin.
 
 ## **Plugin core technologies**
 
-In this session you will know which technologies are part of the State Management Based Component Plugin.
+In this session you will know which technologies are part of the State Based Component Plugin.
 
 The technologies, concepts and design patterns applied in this project are:
 
@@ -31,7 +31,7 @@ The technologies, concepts and design patterns applied in this project are:
 
 ### **Motivation**
 
-The motivation to create this plug-in can be divided into two factors: 
+The motivation to create this plug-in can be divided into two factors:
 - Abstraction of the implementation complexity, as it is known that there is a certain barrier in terms of the learning curve and use by some developers (mainly Junior seniority). .
 
 - Gain time to create a state management structure within an Angular application, because due to the complexity, a task to develop a structure like this, depending on the degree of knowledge of the developer, can take more than a day of hard work.

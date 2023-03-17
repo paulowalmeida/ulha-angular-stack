@@ -1,4 +1,4 @@
-# State Management Based Component Plugin
+# State Based Component Plugin
 From this plugin, you can get a state management based Component with Ngrx/Store in your Angular project.
 
 ## Features
@@ -8,7 +8,7 @@ From this plugin, you can get a state management based Component with Ngrx/Store
 - A small json that can simulate an api with the help of the json-server nodejs module.
 
 ## Tech
-State Management Based Component Plugin needs the following technologies to work properly:
+State Based Component Plugin needs the following technologies to work properly:
 
 - [NodeJS](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/download/)
