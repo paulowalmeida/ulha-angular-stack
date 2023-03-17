@@ -1,6 +1,6 @@
-# **State Based Component Plugin**
+# **Store Based Component Plugin**
 
-The State Based Component Plugin is an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
+The Store Based Component Plugin is an aggregate of technologies and architectural concepts and design patterns that make it easy to create a component that uses state management and API communication under the hood.
 
 This plugin supports being installed in both angular projects created from the stack and by the conventional method.
 
@@ -13,7 +13,7 @@ Next you see more details about the plugin.
 
 ## **Plugin core technologies**
 
-In this session you will know which technologies are part of the State Based Component Plugin.
+In this session you will know which technologies are part of the Store Based Component Plugin.
 
 The technologies, concepts and design patterns applied in this project are:
 

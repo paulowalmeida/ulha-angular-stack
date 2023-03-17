@@ -27,3 +27,7 @@ By default, this method expects to receive a resource as an argument, and at the
 remove<resource>(id: number): void
 ```
 By default, this method expects to receive a resource id as an argument, and in the end it returns nothing.
+
+Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
+
+I hope can help you in your development. ;)

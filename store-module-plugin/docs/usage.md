@@ -17,11 +17,23 @@ stk list stack | grep ulha-angular-stack
 ```sh
 stk apply plugin ulha-angular-stack/store-module-plugin
 ```
+### 4. Applying the plugin in your application
+From that point on, you must enter some information.
 
-### 4. Check the changes in your project
-
+? Entity to be managed by the store (use lowercase and if it is compound name use spaces between word)  (pet)
+```
 ```sh
-git status
+? What is the path where the component will be create?  (src/app/)
+```
+```sh
+? Do you want download ngrx/store dependencies? (Y/n) (Yes)
+```
+```sh
+ Do you want configure ngrx/store modules.forRoot in app.module.ts? (Y/n) (Yes)
+```
+
+### 5. After it, you see something like this on screen and your project is create with success
+```sh
 ```
 
 Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).

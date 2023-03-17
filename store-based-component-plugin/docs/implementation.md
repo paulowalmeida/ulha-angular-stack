@@ -34,3 +34,7 @@ ng serve
 Make sure you have NodeJS configured on your machine.
 
 Go to localhost:4200 and... Ulha! It works!
+
+Feel free to ask for help or suggest improvements from our [Github Repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
+
+I hope can help you in your development. ;)
