@@ -72,36 +72,35 @@ inputs:
     default: true
 
 computedInputs:
-  "component_pascal": "{{ component_name | pascalcase}}"
+  "component_pascalcase": "{{ component_name | pascalcase }}"
   "component_filename": "{{ component_name | replace(' ', '-') }}"
-  "component_classname": "{{ component_pascal + 'Component' }}"
-  "module_name": "{{ component_pascal + 'Module' }}"
+  "component_classname": "{{ component_pascalcase + 'Component' }}"
+  "module_name": "{{ component_pascalcase + 'Module' }}"
 
-  "entity_store_plural": "{{ entity_store_name + 's' }}"
-  "entity_pascal": "{{ entity_store_name | pascalcase }}"
-  "entity_pascal_plural": "{{ entity_store_plural | pascalcase }}"
-  "entity_camel": "{{ entity_store_name | camelcase }}"
-  "entity_camel_plural": "{{ entity_store_plural | camelcase }}"
+  "entity_store_pascalcase": "{{ entity_store_name | pascalcase }}"
+  "entity_store_list": "{{ entity_store_name + ' List' }}"
+  "entity_store_camelcase": "{{ entity_store_name | camelcase }}"
+  "entity_store_camelcase_list": "{{ entity_store_list | camelcase }}"
+  "entity_store_filename": "{{ entity_store_name | replace(' ', '-') }}"
 
-  "filename": "{{ entity_store_name | replace(' ', '-') }}"
-  "filename_plural": "{{ entity_store_plural | replace(' ', '-') }}"
-  "component_path": "{{ inputs.component_path + computed_inputs.filename_plural }}"
+  "entity_failure_model_pascalcase": "{{ entity_store_pascalcase + 'FailureModel' }}"
+  "entity_failure_model_filename": "{{ entity_store_filename }}"
 
-  "failure_model": "{{ entity_pascal + 'FailureModel' }}"
+  "facade_service_instance": "{{ entity_store_camelcase + 'FacadeService' }}"
+  "facade_service_classname": "{{ entity_store_pascalcase + 'FacadeService' }}"
+  "facade_filename": "{{ entity_store_filename }}"
 
-  "service_filename": "{{ service_name | replace(' ', '-') }}"
+  "effects_name": "{{ entity_store_pascalcase + 'Effects' }}"
+  "reducer_name": "{{ entity_store_camelcase + 'Reducer' }}"
+  "feature_selector_name": "{{ entity_store_camelcase + 'FeatureSelector' }}"
+
   "service_classname": "{{ service_name | pascalcase + 'Service'}}"
   "service_instance": "{{ service_name | camelcase + 'Service' }}"
-  "resouce_pascal": "{{ resource_name | pascalcase }}"
-  "resouce_camel": "{{ resource_name | camelcase }}"
+  "service_filename": "{{ service_name | replace(' ', '-') }}"
+  "resource_pascal": "{{ resource_name | pascalcase }}"
+  "resource_camel": "{{ resource_name | camelcase }}"
 
-  "facade_service_instance": "{{ entity_camel + 'FacadeService' }}"
-  "facade_service_classname": "{{ entity_pascal + 'FacadeService' }}"
-
-  "effects_name": "{{ entity_pascal + 'Effects' }}"
-  "reducer_name": "{{ entity_camel + 'Reducer' }}"
-  "feature_selector_name": "{{ entity_camel_plural + 'FeatureSelector' }}"
-
+  "component_path": "{{ inputs.component_path + computed_inputs.component_filename }}"
 hooks:
   - type: run-script
     trigger: before-render
@@ -109,7 +108,7 @@ hooks:
 
   - type: run-script
     trigger: before-render
-    script: scripts/build-store-variables.py
+    script: scripts/build-events-store-variables.py
 
   - type: run
     trigger: after-render

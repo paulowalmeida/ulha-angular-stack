@@ -1,5 +1,5 @@
 {
-  "{{entity_store_plural}}": [
+  "{{ resource_name + 's' }}": [
     {
       "id": 1,
       "name": "Pichi",

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { {{ facade_service_classname }} } from './{{ filename }}.facade.service';
+import { {{ facade_service_classname }} } from './{{ facade_service_filename }}.facade.service';
 
 describe('{{ facade_service_classname }}', () => {
   let service: {{ facade_service_classname }};

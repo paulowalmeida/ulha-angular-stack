@@ -11,7 +11,7 @@ export class {{ service_classname }} {
 
   constructor(private http: HttpClient) { }
 
-  {{ get_list }}(): Observable<any> {
+  {{ service_get_list }}(): Observable<any> {
     try {
       return this.http.get<any>(BASE_URL);
     } catch(error) {
@@ -19,7 +19,7 @@ export class {{ service_classname }} {
     }
   }
 
-  {{ get_item }}(id: any): Observable<any> {
+  {{ service_get_item }}(id: any): Observable<any> {
     try {
       return this.http.get<any>(BASE_URL + '/' + id);
     } catch(error) {
@@ -27,23 +27,23 @@ export class {{ service_classname }} {
     }
   }
 
-  {{ save_item }}({{ resouce_camel }}: any): Observable<any> {
+  {{ service_save_item }}({{ resource_camel }}: any): Observable<any> {
     try {
-      return this.http.post<any>(BASE_URL, {{ resouce_camel }});
+      return this.http.post<any>(BASE_URL, {{ resource_camel }});
     } catch (error) {
       return of(new Error('Error creating selected item.'));
     }
   }
 
-  {{ edit_item }}({{ resouce_camel }}: any): Observable<any> {
+  {{ service_edit_item }}({{ resource_camel }}: any): Observable<any> {
     try {
-      return this.http.patch<any>(BASE_URL + '/' + {{resouce_camel + '.id'}}, {{ resouce_camel }});
+      return this.http.patch<any>(BASE_URL + '/' + {{resource_camel + '.id'}}, {{ resource_camel }});
     } catch (error) {
       return of(new Error('Error updating selected item.'));
     }
   }
 
-  {{ remove_item }}(id: any): Observable<any> {
+  {{ service_remove_item }}(id: any): Observable<any> {
     try {
       return this.http.delete<any>(BASE_URL + '/' + id);
     } catch (error) {

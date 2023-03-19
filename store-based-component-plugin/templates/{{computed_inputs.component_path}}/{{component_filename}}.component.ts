@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { {{ facade_service_classname }} } from './services/facade/{{ filename }}.facade.service';
+import { {{ facade_service_classname }} } from './services/facade/{{ facade_filename }}.facade.service';
 
 /**
  * @author Paulo W. A. Ferreira
@@ -16,9 +16,9 @@ import { {{ facade_service_classname }} } from './services/facade/{{ filename }}
 })
 export class {{ component_classname }} implements OnInit {
 
-  {{ entity_camel_plural }}: any | null | undefined = [];
-  {{ entity_camel + 'Selected' }}: any;
-  {{ entity_camel + 'Values' }}: any;
+  {{ entity_store_camelcase_list }}: any | null | undefined = [];
+  {{ entity_store_camelcase + 'Selected' }}: any;
+  {{ entity_store_camelcase + 'Values' }}: any;
   form: FormGroup | any;
   formButtonLabel = 'Submit';
   showMode: 'edit' | 'view' = 'view';
@@ -35,8 +35,8 @@ export class {{ component_classname }} implements OnInit {
 
   clearFields() {
     this.createForm();
-    this.{{ entity_camel + 'Selected' }} = null;
-    this.{{ entity_camel + 'Values' }} = null;
+    this.{{ entity_store_camelcase + 'Selected' }} = null;
+    this.{{ entity_store_camelcase + 'Values' }} = null;
     this.formButtonLabel = 'Submit';
   }
 
@@ -45,13 +45,13 @@ export class {{ component_classname }} implements OnInit {
   }
 
   edit(id: number) {
-    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_camel +'Found' }} => {
-      this.{{ entity_camel + 'Selected' }} = {{ entity_camel +'Found' }};
-      this.form.patchValue({ name: {{ entity_camel +'Found' }}.name });
-      this.form.patchValue({ breed: {{ entity_camel +'Found' }}.breed });
-      this.form.patchValue({ weight: {{ entity_camel +'Found' }}.weight });
-      this.form.patchValue({ years: {{ entity_camel +'Found' }}.age.years });
-      this.form.patchValue({ months: {{ entity_camel +'Found' }}.age.months });
+    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_store_camelcase +'Found' }} => {
+      this.{{ entity_store_camelcase + 'Selected' }} = {{ entity_store_camelcase +'Found' }};
+      this.form.patchValue({ name: {{ entity_store_camelcase +'Found' }}.name });
+      this.form.patchValue({ breed: {{ entity_store_camelcase +'Found' }}.breed });
+      this.form.patchValue({ weight: {{ entity_store_camelcase +'Found' }}.weight });
+      this.form.patchValue({ years: {{ entity_store_camelcase +'Found' }}.age.years });
+      this.form.patchValue({ months: {{ entity_store_camelcase +'Found' }}.age.months });
     });
     this.formButtonLabel = 'Update';
     this.showMode = 'edit';
@@ -65,13 +65,13 @@ export class {{ component_classname }} implements OnInit {
   }
 
   showDetails(id: any) {
-    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_camel }} => this.{{ entity_camel + 'Selected' }} = {{ entity_camel }});
+    this.{{ facade_service_instance }}.{{ get_item }}(id).subscribe({{ entity_store_camelcase }} => this.{{ entity_store_camelcase + 'Selected' }} = {{ entity_store_camelcase }});
     this.showMode = 'view';
   }
 
   saveEdit() {
-    this.{{ entity_camel + 'Values' }} = {
-      id: this.{{ entity_camel + 'Selected' }}?.id,
+    this.{{ entity_store_camelcase + 'Values' }} = {
+      id: this.{{ entity_store_camelcase + 'Selected' }}?.id,
       name: this.form.get('name').value,
       breed: this.form.get('breed').value,
       weight: this.form.get('weight').value as number,
@@ -82,13 +82,13 @@ export class {{ component_classname }} implements OnInit {
     };
 
     this.formButtonLabel === 'Submit'
-      ? this.{{ facade_service_instance }}.{{ save_item }}(this.{{ entity_camel + 'Values' }})
-      : this.{{ facade_service_instance }}.{{ edit_item }}(this.{{ entity_camel + 'Values' }});
+      ? this.{{ facade_service_instance }}.{{ save_item }}(this.{{ entity_store_camelcase + 'Values' }})
+      : this.{{ facade_service_instance }}.{{ edit_item }}(this.{{ entity_store_camelcase + 'Values' }});
 
     this.createForm();
     this.formButtonLabel = 'Submit';
     this.showMode = 'view';
-    this.{{ entity_camel + 'Selected' }} = null;
+    this.{{ entity_store_camelcase + 'Selected' }} = null;
     this.{{ get_list }}();
   }
 
@@ -108,8 +108,8 @@ export class {{ component_classname }} implements OnInit {
   }
 
   private {{ get_list }}() {
-    this.{{ facade_service_instance }}.{{ get_list }}(true).subscribe({{ entity_camel_plural }} => {
-      this.{{ entity_camel_plural }} = {{ entity_camel_plural }};
+    this.{{ facade_service_instance }}.{{ get_list }}(true).subscribe({{ entity_store_camelcase_list }} => {
+      this.{{ entity_store_camelcase_list }} = {{ entity_store_camelcase_list }};
     });
   }
 }

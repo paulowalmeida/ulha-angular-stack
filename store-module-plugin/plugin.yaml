@@ -18,7 +18,7 @@ types:
 inputs:
   - label: Entity to be managed by the store (use lowercase and if it is compound name use spaces between word)
     type: text
-    name: entity_name
+    name: entity_store_name
     default: pet
 
   - label: What is the path where the component will be create?
@@ -37,22 +37,22 @@ inputs:
     default: true
 
 computedInputs:
-  "entity_plural": "{{ entity_name + 's' }}"
-  "entity_pascal": "{{ entity_name | pascalcase }}"
-  "entity_pascal_plural": "{{ entity_plural | pascalcase }}"
-  "entity_camel": "{{ entity_name | camelcase }}"
-  "entity_camel_plural": "{{ entity_plural | camelcase }}"
-  "store_path": "{{ inputs.store_path + inputs.entity_name + 's' }}"
+  "entity_store_list": "{{ entity_store_name + ' List' }}"
+  "entity_store_pascalcase": "{{ entity_store_name | pascalcase }}"
+  "entity_store_camelcase": "{{ entity_store_name | camelcase }}"
+  "entity_store_camelcase_list": "{{ entity_store_list | camelcase }}"
+  "entity_store_filename": "{{ entity_store_name | replace(' ', '-') }}"
+  "store_path": "{{ inputs.store_path + inputs.entity_store_name + 's' }}"
 
-  "filename": "{{ entity_name | replace(' ', '-') }}"
-  "failure_model": "{{ entity_pascal + 'FailureModel' }}"
+  "entity_failure_model_pascalcase": "{{ entity_store_pascalcase + 'FailureModel' }}"
+  "entity_failure_model_filename": "{{ entity_store_filename }}"
 
-  "facade_service_calmel": "{{ entity_camel + 'FacadeService' }}"
-  "facade_service_pascal": "{{ entity_pascal + 'FacadeService' }}"
+  "facade_service_classname": "{{ entity_store_pascalcase + 'FacadeService' }}"
+  "facade_service_filename": "{{ entity_store_name | replace(' ', '-') }}"
 
-  "effects_name": "{{ entity_pascal + 'Effects' }}"
-  "reducer_name": "{{ entity_camel + 'Reducer' }}"
-  "feature_selector_name": "{{ entity_camel_plural + 'FeatureSelector' }}"
+  "effects_name": "{{ entity_store_pascalcase + 'Effects' }}"
+  "reducer_name": "{{ entity_store_camelcase + 'Reducer' }}"
+  "feature_selector_name": "{{ entity_store_camelcase + 'FeatureSelector' }}"
 
 hooks:
   - type: run-script

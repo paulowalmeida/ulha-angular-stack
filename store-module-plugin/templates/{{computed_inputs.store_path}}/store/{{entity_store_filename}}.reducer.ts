@@ -1,29 +1,29 @@
 import { createReducer, on } from "@ngrx/store";
 import { AbstractFetchStateModel } from "../models/abstract-fetch-state.model";
-import * as actions from "./{{ filename }}.actions";
+import * as actions from "./{{ entity_store_filename }}.actions";
 
 export interface State extends AbstractFetchStateModel {
-    {{ entity_camel }}?: any | null;
-    {{ entity_camel_plural }}?: any | null;
+    {{ entity_store_camelcase }}?: any | null;
+    {{ entity_store_camelcase_list }}?: any | null;
 }
 
-export const {{'initial' + entity_pascal + 'State'}}: State = {
-    {{ entity_camel }}: null,
-    {{ entity_camel_plural }}: null,
+export const {{'initial' + entity_store_pascalcase + 'State'}}: State = {
+    {{ entity_store_camelcase }}: null,
+    {{ entity_store_camelcase_list }}: null,
     loading: false,
     failure: null
 };
 
 export const {{ reducer_name }} = createReducer(
-    {{ 'initial' + entity_pascal + 'State' }},
+    {{ 'initial' + entity_store_pascalcase + 'State' }},
     on(actions.{{ evt_get_list | pascalcase }}, (state) => ({
         ...state,
         loading: true
     })),
 
-    on(actions.{{ evt_get_list_success | pascalcase }}, (state, { {{ entity_camel_plural }} }) => ({
+    on(actions.{{ evt_get_list_success | pascalcase }}, (state, { {{ entity_store_camelcase_list }} }) => ({
         ...state,
-        {{ entity_camel_plural }},
+        {{ entity_store_camelcase_list }},
         loading: false,
         failure: null,
     })),
@@ -39,9 +39,9 @@ export const {{ reducer_name }} = createReducer(
         loading: true
     })),
 
-    on(actions.{{ evt_get_item_success | pascalcase }}, (state, { {{ entity_camel }} }) => ({
+    on(actions.{{ evt_get_item_success | pascalcase }}, (state, { {{ entity_store_camelcase }} }) => ({
         ...state,
-        {{ entity_camel }},
+        {{ entity_store_camelcase }},
         loading: false,
         failure: null,
     })),
@@ -52,15 +52,15 @@ export const {{ reducer_name }} = createReducer(
         failure
     })),
 
-    on(actions.{{ evt_post_item | pascalcase }}, (state, { {{ entity_camel }} }) => ({
+    on(actions.{{ evt_post_item | pascalcase }}, (state, { {{ entity_store_camelcase }} }) => ({
         ...state,
-        {{ entity_camel }},
+        {{ entity_store_camelcase }},
         loading: true
     })),
 
-    on(actions.{{ evt_post_item_success | pascalcase }}, (state, { {{ entity_camel }} }) => ({
+    on(actions.{{ evt_post_item_success | pascalcase }}, (state, { {{ entity_store_camelcase }} }) => ({
         ...state,
-        {{ entity_camel }},
+        {{ entity_store_camelcase }},
         loading: false,
         failure: null
     })),
@@ -76,9 +76,9 @@ export const {{ reducer_name }} = createReducer(
         loading: true
     })),
 
-    on(actions.{{ evt_put_item_success | pascalcase }}, (state, { {{ entity_camel }} }) => ({
+    on(actions.{{ evt_put_item_success | pascalcase }}, (state, { {{ entity_store_camelcase }} }) => ({
         ...state,
-        {{ entity_camel }},
+        {{ entity_store_camelcase }},
         loading: false,
         failure: null
     })),

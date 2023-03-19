@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { State } from "../store/{{ filename }}.reducer";
-import * as selectors from '../store/{{ filename }}.selectors';
-import * as actions from "../store/{{ filename }}.actions";
+import { State } from "../store/{{ entity_store_filename }}.reducer";
+import * as selectors from '../store/{{ entity_store_filename }}.selectors';
+import * as actions from "../store/{{ entity_store_filename }}.actions";
 
 @Injectable({
   providedIn: 'root'
 })
-export class {{ facade_service_pascal }} {
+export class {{ facade_service_classname }} {
 
   constructor(readonly store: Store<State>) { }
 
@@ -30,13 +30,13 @@ export class {{ facade_service_pascal }} {
     return this.store.select(selectors.{{ evt_get_item_success | camelcase }});
   }
 
-  {{ save_item }}({{ entity_camel }}: any): Observable<any> {
-    this.store.dispatch(actions.{{ evt_post_item | pascalcase }}({ {{ entity_camel }} }));
+  {{ save_item }}({{ entity_store_camelcase }}: any): Observable<any> {
+    this.store.dispatch(actions.{{ evt_post_item | pascalcase }}({ {{ entity_store_camelcase }} }));
     return this.store.select(selectors.{{ evt_post_item_success | camelcase }});
   }
 
-  {{ edit_item }}({{ entity_camel }}: any): Observable<any> {
-    this.store.dispatch(actions.{{ evt_put_item | pascalcase }}({ {{ entity_camel }} }));
+  {{ edit_item }}({{ entity_store_camelcase }}: any): Observable<any> {
+    this.store.dispatch(actions.{{ evt_put_item | pascalcase }}({ {{ entity_store_camelcase }} }));
     return this.store.select(selectors.{{ evt_put_item_success | camelcase }});
   }
 
@@ -46,10 +46,10 @@ export class {{ facade_service_pascal }} {
   }
 
   private {{ get_item + 'InState' }}(id: any) {
-    this.store.select(selectors.{{ evt_get_list_success | camelcase }}).subscribe(({{ entity_camel_plural }}: any) => {
-      const {{ entity_camel + 'Found' }} = {{ entity_camel_plural }}.find(({{ entity_camel }}: any) => {{ entity_camel }}.id === id);
-      if (!!{{ entity_camel + 'Found' }}) {
-        this.store.dispatch(actions.{{ evt_get_item_success | pascalcase }}({ {{ entity_camel }}: {{ entity_camel + 'Found' }} }))
+    this.store.select(selectors.{{ evt_get_list_success | camelcase }}).subscribe(({{ entity_store_camelcase_list }}: any) => {
+      const {{ entity_store_camelcase + 'Found' }} = {{ entity_store_camelcase_list }}.find(({{ entity_store_camelcase }}: any) => {{ entity_store_camelcase }}.id === id);
+      if (!!{{ entity_store_camelcase + 'Found' }}) {
+        this.store.dispatch(actions.{{ evt_get_item_success | pascalcase }}({ {{ entity_store_camelcase }}: {{ entity_store_camelcase + 'Found' }} }))
       }
     })
   }
