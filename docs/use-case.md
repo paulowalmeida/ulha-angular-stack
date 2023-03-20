@@ -102,8 +102,8 @@ Enjoy Dev!
 - <app_name> application successfully created!
 ```
 
-For more info about how to install and use stackspot in access [this link](https://docs.stackspot.com/docs/stk-cli/installation)
+For more info about how to install and use Stackspot, visit [this link](https://docs.stackspot.com/docs/stk-cli/installation)
 
 Feel free to ask for help, or suggest improvements from [github repository](https://github.com/paulowalmeida/ulha-angular-stack/issues).
 
-I hope this stack can help you in your development.
+
