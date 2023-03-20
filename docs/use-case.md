@@ -1,8 +1,8 @@
-The purpose of this template is to deliver an Angular base project to the developer. However the biggest advantage of using this template is the ability to create a project in **several versions without the need to install @angular/cli**.
+The purpose of this stack is to give developers a base Angular project in a particular Angular version **without the need to install @angular/cli**.
 
-The next step in the evolution of the stack will be to provide a new template based on the **Ulha Architecture**, that was thought from clean architecture concepts and some of the most used design patterns. This will also allow you to create projects in different versions.
+For the next releases, a new template based on the **Ulha Architecture** will be included. Ulha is built on clean architecture concepts and some of the most used design patterns. 
 
-For now, let's focus on creating a project from the default template.
+How to use the stack:
 ## Steps
 If you have not downloaded and configured ulha-angular-stack, **please perform steps 1 and 2** below, otherwise skip them.
 
