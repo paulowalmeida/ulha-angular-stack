@@ -1,5 +1,5 @@
 {
-  "{{ resource_name + 's' }}": [
+  "{{resource_name + 's'}}": [
     {
       "id": 1,
       "name": "Pichi",
